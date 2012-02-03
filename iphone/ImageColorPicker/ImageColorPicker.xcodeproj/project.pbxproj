@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		660C650514DA900C003F9301 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660C650414DA900C003F9301 /* UIKit.framework */; };
+		660C650714DA900C003F9301 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660C650614DA900C003F9301 /* Foundation.framework */; };
+		660C650914DA900C003F9301 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660C650814DA900C003F9301 /* CoreGraphics.framework */; };
+		660C650F14DA900C003F9301 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 660C650D14DA900C003F9301 /* InfoPlist.strings */; };
+		660C651114DA900C003F9301 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 660C651014DA900C003F9301 /* main.m */; };
+		660C651514DA900C003F9301 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 660C651414DA900C003F9301 /* AppDelegate.m */; };
+		660C651B14DA900C003F9301 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660C651A14DA900C003F9301 /* ViewController.m */; };
+		660C652214DA932A003F9301 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660C652114DA932A003F9301 /* QuartzCore.framework */; };
+		660C652414DA93B6003F9301 /* suit.png in Resources */ = {isa = PBXBuildFile; fileRef = 660C652314DA93B6003F9301 /* suit.png */; };
+		665D345014DB700D00C0B028 /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 665D344F14DB700D00C0B028 /* CustomImageView.m */; };
+		665D345414DB8D2C00C0B028 /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 665D345314DB8D2C00C0B028 /* AutoScrollLabel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		660C650014DA900C003F9301 /* ImageColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		660C650414DA900C003F9301 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		660C650614DA900C003F9301 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		660C650814DA900C003F9301 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		660C650C14DA900C003F9301 /* ImageColorPicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageColorPicker-Info.plist"; sourceTree = "<group>"; };
+		660C650E14DA900C003F9301 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		660C651014DA900C003F9301 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		660C651214DA900C003F9301 /* ImageColorPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageColorPicker-Prefix.pch"; sourceTree = "<group>"; };
+		660C651314DA900C003F9301 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		660C651414DA900C003F9301 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		660C651914DA900C003F9301 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		660C651A14DA900C003F9301 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		660C652114DA932A003F9301 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		660C652314DA93B6003F9301 /* suit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suit.png; sourceTree = "<group>"; };
+		665D344E14DB700D00C0B028 /* CustomImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageView.h; sourceTree = "<group>"; };
+		665D344F14DB700D00C0B028 /* CustomImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageView.m; sourceTree = "<group>"; };
+		665D345214DB8D2C00C0B028 /* AutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollLabel.h; sourceTree = "<group>"; };
+		665D345314DB8D2C00C0B028 /* AutoScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollLabel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		660C64FD14DA900C003F9301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660C652214DA932A003F9301 /* QuartzCore.framework in Frameworks */,
+				660C650514DA900C003F9301 /* UIKit.framework in Frameworks */,
+				660C650714DA900C003F9301 /* Foundation.framework in Frameworks */,
+				660C650914DA900C003F9301 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		660C64F514DA900C003F9301 = {
+			isa = PBXGroup;
+			children = (
+				660C652314DA93B6003F9301 /* suit.png */,
+				660C650A14DA900C003F9301 /* ImageColorPicker */,
+				660C650314DA900C003F9301 /* Frameworks */,
+				660C650114DA900C003F9301 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		660C650114DA900C003F9301 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				660C650014DA900C003F9301 /* ImageColorPicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		660C650314DA900C003F9301 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				660C652114DA932A003F9301 /* QuartzCore.framework */,
+				660C650414DA900C003F9301 /* UIKit.framework */,
+				660C650614DA900C003F9301 /* Foundation.framework */,
+				660C650814DA900C003F9301 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		660C650A14DA900C003F9301 /* ImageColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				665D345214DB8D2C00C0B028 /* AutoScrollLabel.h */,
+				665D345314DB8D2C00C0B028 /* AutoScrollLabel.m */,
+				660C651314DA900C003F9301 /* AppDelegate.h */,
+				660C651414DA900C003F9301 /* AppDelegate.m */,
+				660C651914DA900C003F9301 /* ViewController.h */,
+				660C651A14DA900C003F9301 /* ViewController.m */,
+				660C650B14DA900C003F9301 /* Supporting Files */,
+				665D344E14DB700D00C0B028 /* CustomImageView.h */,
+				665D344F14DB700D00C0B028 /* CustomImageView.m */,
+			);
+			path = ImageColorPicker;
+			sourceTree = "<group>";
+		};
+		660C650B14DA900C003F9301 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				660C650C14DA900C003F9301 /* ImageColorPicker-Info.plist */,
+				660C650D14DA900C003F9301 /* InfoPlist.strings */,
+				660C651014DA900C003F9301 /* main.m */,
+				660C651214DA900C003F9301 /* ImageColorPicker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		660C64FF14DA900C003F9301 /* ImageColorPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660C651E14DA900C003F9301 /* Build configuration list for PBXNativeTarget "ImageColorPicker" */;
+			buildPhases = (
+				660C64FC14DA900C003F9301 /* Sources */,
+				660C64FD14DA900C003F9301 /* Frameworks */,
+				660C64FE14DA900C003F9301 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageColorPicker;
+			productName = ImageColorPicker;
+			productReference = 660C650014DA900C003F9301 /* ImageColorPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		660C64F714DA900C003F9301 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 660C64FA14DA900C003F9301 /* Build configuration list for PBXProject "ImageColorPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 660C64F514DA900C003F9301;
+			productRefGroup = 660C650114DA900C003F9301 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				660C64FF14DA900C003F9301 /* ImageColorPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		660C64FE14DA900C003F9301 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660C650F14DA900C003F9301 /* InfoPlist.strings in Resources */,
+				660C652414DA93B6003F9301 /* suit.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		660C64FC14DA900C003F9301 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660C651114DA900C003F9301 /* main.m in Sources */,
+				660C651514DA900C003F9301 /* AppDelegate.m in Sources */,
+				660C651B14DA900C003F9301 /* ViewController.m in Sources */,
+				665D345014DB700D00C0B028 /* CustomImageView.m in Sources */,
+				665D345414DB8D2C00C0B028 /* AutoScrollLabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		660C650D14DA900C003F9301 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660C650E14DA900C003F9301 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		660C651C14DA900C003F9301 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Trinh Hung (N2P55ZSV7A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Trinh Hung (N2P55ZSV7A)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "AC086193-3A78-4C4E-9CE8-433C94D39C57";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AC086193-3A78-4C4E-9CE8-433C94D39C57";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		660C651D14DA900C003F9301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Trinh Hung (N2P55ZSV7A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Trinh Hung (N2P55ZSV7A)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "AC086193-3A78-4C4E-9CE8-433C94D39C57";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AC086193-3A78-4C4E-9CE8-433C94D39C57";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		660C651F14DA900C003F9301 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Trinh Hung (N2P55ZSV7A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Trinh Hung (N2P55ZSV7A)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageColorPicker/ImageColorPicker-Prefix.pch";
+				INFOPLIST_FILE = "ImageColorPicker/ImageColorPicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "AC086193-3A78-4C4E-9CE8-433C94D39C57";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AC086193-3A78-4C4E-9CE8-433C94D39C57";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		660C652014DA900C003F9301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Trinh Hung (N2P55ZSV7A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Trinh Hung (N2P55ZSV7A)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageColorPicker/ImageColorPicker-Prefix.pch";
+				INFOPLIST_FILE = "ImageColorPicker/ImageColorPicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "AC086193-3A78-4C4E-9CE8-433C94D39C57";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AC086193-3A78-4C4E-9CE8-433C94D39C57";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		660C64FA14DA900C003F9301 /* Build configuration list for PBXProject "ImageColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660C651C14DA900C003F9301 /* Debug */,
+				660C651D14DA900C003F9301 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660C651E14DA900C003F9301 /* Build configuration list for PBXNativeTarget "ImageColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660C651F14DA900C003F9301 /* Debug */,
+				660C652014DA900C003F9301 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 660C64F714DA900C003F9301 /* Project object */;
+}
