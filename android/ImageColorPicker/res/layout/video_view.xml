@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:id="@+id/layout">
+	<!--  <TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="Camera Demo"
+		android:textSize="24sp" />-->
+
+	<FrameLayout android:id="@+id/preview"
+		android:layout_width="0px"
+		android:layout_height="0px">
+	</FrameLayout >
+	<RelativeLayout android:layout_weight="1" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" >
+	<SurfaceView
+		 android:layout_weight="1" android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:id="@+id/cameraView"
+	/>
+	
+	<ImageView 
+	android:layout_weight="1" android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:background="@drawable/suit"
+	/>
+	
+	</RelativeLayout>
+	<Button android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/buttonCapture"
+		android:text="Capture" android:layout_gravity="center"></Button>
+	<Button
+		 android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/buttonUse"
+		android:text="Use This Image" android:layout_gravity="center"
+		android:visibility="invisible"
+		android:onClick="onButtonUseClicked"
+	/>
+</LinearLayout>
