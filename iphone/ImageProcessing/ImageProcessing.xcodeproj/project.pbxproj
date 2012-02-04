@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F542409414DA354A008BC8B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F542409314DA354A008BC8B7 /* UIKit.framework */; };
+		F542409614DA354A008BC8B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F542409514DA354A008BC8B7 /* Foundation.framework */; };
+		F542409814DA354A008BC8B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F542409714DA354A008BC8B7 /* CoreGraphics.framework */; };
+		F542409E14DA354A008BC8B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F542409C14DA354A008BC8B7 /* InfoPlist.strings */; };
+		F54240A014DA354A008BC8B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F542409F14DA354A008BC8B7 /* main.m */; };
+		F54240A414DA354A008BC8B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240A314DA354A008BC8B7 /* AppDelegate.m */; };
+		F54240A714DA354A008BC8B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240A614DA354A008BC8B7 /* ViewController.m */; };
+		F54240AA14DA354A008BC8B7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F54240A814DA354A008BC8B7 /* ViewController.xib */; };
+		F54240C114DA35C9008BC8B7 /* BezierCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240B114DA35C9008BC8B7 /* BezierCurve.m */; };
+		F54240C214DA35C9008BC8B7 /* CatmullRomSpline.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240B314DA35C9008BC8B7 /* CatmullRomSpline.m */; };
+		F54240C314DA35C9008BC8B7 /* CubicBezierCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240B614DA35C9008BC8B7 /* CubicBezierCurve.m */; };
+		F54240C414DA35C9008BC8B7 /* LinearBezierCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240B814DA35C9008BC8B7 /* LinearBezierCurve.m */; };
+		F54240C514DA35C9008BC8B7 /* NSArray_PointArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240BA14DA35C9008BC8B7 /* NSArray_PointArray.m */; };
+		F54240C614DA35C9008BC8B7 /* QuadraticBezierCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240BC14DA35C9008BC8B7 /* QuadraticBezierCurve.m */; };
+		F54240C714DA35C9008BC8B7 /* Spline.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240BE14DA35C9008BC8B7 /* Spline.m */; };
+		F54240C814DA35C9008BC8B7 /* CoreImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = F54240C014DA35C9008BC8B7 /* CoreImageProcessing.m */; };
+		F54240CF14DA3702008BC8B7 /* fx-film-filmgrain-thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F54240CA14DA3702008BC8B7 /* fx-film-filmgrain-thumb.jpg */; };
+		F54240D014DA3702008BC8B7 /* fx-film-filmgrain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F54240CB14DA3702008BC8B7 /* fx-film-filmgrain.jpg */; };
+		F54240D114DA3702008BC8B7 /* fx-film-mask.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F54240CC14DA3702008BC8B7 /* fx-film-mask.jpg */; };
+		F54240D214DA3702008BC8B7 /* fx-film-nostalgia-brown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F54240CD14DA3702008BC8B7 /* fx-film-nostalgia-brown.jpg */; };
+		F54240D314DA3702008BC8B7 /* fx-film-nostalgia-stone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F54240CE14DA3702008BC8B7 /* fx-film-nostalgia-stone.jpg */; };
+		F54240D914DA398C008BC8B7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54240D814DA398C008BC8B7 /* Accelerate.framework */; };
+		F54240DB14DA3996008BC8B7 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54240DA14DA3995008BC8B7 /* CoreImage.framework */; };
+		F54240DF14DA5D98008BC8B7 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = F54240DE14DA5D98008BC8B7 /* mask.png */; };
+		F54240E114DA5FFB008BC8B7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F54240E014DA5FFA008BC8B7 /* background.png */; };
+		F54240EC14DA89B2008BC8B7 /* be_Diem.png in Resources */ = {isa = PBXBuildFile; fileRef = F54240EB14DA89B2008BC8B7 /* be_Diem.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F542408F14DA354A008BC8B7 /* ImageProcessing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageProcessing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F542409314DA354A008BC8B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F542409514DA354A008BC8B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F542409714DA354A008BC8B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F542409B14DA354A008BC8B7 /* ImageProcessing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageProcessing-Info.plist"; sourceTree = "<group>"; };
+		F542409D14DA354A008BC8B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F542409F14DA354A008BC8B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F54240A114DA354A008BC8B7 /* ImageProcessing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageProcessing-Prefix.pch"; sourceTree = "<group>"; };
+		F54240A214DA354A008BC8B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F54240A314DA354A008BC8B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F54240A514DA354A008BC8B7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F54240A614DA354A008BC8B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F54240A914DA354A008BC8B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		F54240B014DA35C9008BC8B7 /* BezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierCurve.h; sourceTree = "<group>"; };
+		F54240B114DA35C9008BC8B7 /* BezierCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierCurve.m; sourceTree = "<group>"; };
+		F54240B214DA35C9008BC8B7 /* CatmullRomSpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatmullRomSpline.h; sourceTree = "<group>"; };
+		F54240B314DA35C9008BC8B7 /* CatmullRomSpline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatmullRomSpline.m; sourceTree = "<group>"; };
+		F54240B414DA35C9008BC8B7 /* CGPointArithmetic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPointArithmetic.h; sourceTree = "<group>"; };
+		F54240B514DA35C9008BC8B7 /* CubicBezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubicBezierCurve.h; sourceTree = "<group>"; };
+		F54240B614DA35C9008BC8B7 /* CubicBezierCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubicBezierCurve.m; sourceTree = "<group>"; };
+		F54240B714DA35C9008BC8B7 /* LinearBezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearBezierCurve.h; sourceTree = "<group>"; };
+		F54240B814DA35C9008BC8B7 /* LinearBezierCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinearBezierCurve.m; sourceTree = "<group>"; };
+		F54240B914DA35C9008BC8B7 /* NSArray_PointArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray_PointArray.h; sourceTree = "<group>"; };
+		F54240BA14DA35C9008BC8B7 /* NSArray_PointArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArray_PointArray.m; sourceTree = "<group>"; };
+		F54240BB14DA35C9008BC8B7 /* QuadraticBezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadraticBezierCurve.h; sourceTree = "<group>"; };
+		F54240BC14DA35C9008BC8B7 /* QuadraticBezierCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadraticBezierCurve.m; sourceTree = "<group>"; };
+		F54240BD14DA35C9008BC8B7 /* Spline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spline.h; sourceTree = "<group>"; };
+		F54240BE14DA35C9008BC8B7 /* Spline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spline.m; sourceTree = "<group>"; };
+		F54240BF14DA35C9008BC8B7 /* CoreImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageProcessing.h; sourceTree = "<group>"; };
+		F54240C014DA35C9008BC8B7 /* CoreImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageProcessing.m; sourceTree = "<group>"; };
+		F54240CA14DA3702008BC8B7 /* fx-film-filmgrain-thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fx-film-filmgrain-thumb.jpg"; sourceTree = "<group>"; };
+		F54240CB14DA3702008BC8B7 /* fx-film-filmgrain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fx-film-filmgrain.jpg"; sourceTree = "<group>"; };
+		F54240CC14DA3702008BC8B7 /* fx-film-mask.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fx-film-mask.jpg"; sourceTree = "<group>"; };
+		F54240CD14DA3702008BC8B7 /* fx-film-nostalgia-brown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fx-film-nostalgia-brown.jpg"; sourceTree = "<group>"; };
+		F54240CE14DA3702008BC8B7 /* fx-film-nostalgia-stone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fx-film-nostalgia-stone.jpg"; sourceTree = "<group>"; };
+		F54240D814DA398C008BC8B7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		F54240DA14DA3995008BC8B7 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		F54240DE14DA5D98008BC8B7 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
+		F54240E014DA5FFA008BC8B7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		F54240EB14DA89B2008BC8B7 /* be_Diem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = be_Diem.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F542408C14DA354A008BC8B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54240DB14DA3996008BC8B7 /* CoreImage.framework in Frameworks */,
+				F54240D914DA398C008BC8B7 /* Accelerate.framework in Frameworks */,
+				F542409414DA354A008BC8B7 /* UIKit.framework in Frameworks */,
+				F542409614DA354A008BC8B7 /* Foundation.framework in Frameworks */,
+				F542409814DA354A008BC8B7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F542408414DA3549008BC8B7 = {
+			isa = PBXGroup;
+			children = (
+				F54240DA14DA3995008BC8B7 /* CoreImage.framework */,
+				F54240D814DA398C008BC8B7 /* Accelerate.framework */,
+				F542409914DA354A008BC8B7 /* ImageProcessing */,
+				F542409214DA354A008BC8B7 /* Frameworks */,
+				F542409014DA354A008BC8B7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F542409014DA354A008BC8B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F542408F14DA354A008BC8B7 /* ImageProcessing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F542409214DA354A008BC8B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F542409314DA354A008BC8B7 /* UIKit.framework */,
+				F542409514DA354A008BC8B7 /* Foundation.framework */,
+				F542409714DA354A008BC8B7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F542409914DA354A008BC8B7 /* ImageProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				F54240C914DA36F5008BC8B7 /* Images */,
+				F54240B014DA35C9008BC8B7 /* BezierCurve.h */,
+				F54240B114DA35C9008BC8B7 /* BezierCurve.m */,
+				F54240B214DA35C9008BC8B7 /* CatmullRomSpline.h */,
+				F54240B314DA35C9008BC8B7 /* CatmullRomSpline.m */,
+				F54240B414DA35C9008BC8B7 /* CGPointArithmetic.h */,
+				F54240B514DA35C9008BC8B7 /* CubicBezierCurve.h */,
+				F54240B614DA35C9008BC8B7 /* CubicBezierCurve.m */,
+				F54240B714DA35C9008BC8B7 /* LinearBezierCurve.h */,
+				F54240B814DA35C9008BC8B7 /* LinearBezierCurve.m */,
+				F54240B914DA35C9008BC8B7 /* NSArray_PointArray.h */,
+				F54240BA14DA35C9008BC8B7 /* NSArray_PointArray.m */,
+				F54240BB14DA35C9008BC8B7 /* QuadraticBezierCurve.h */,
+				F54240BC14DA35C9008BC8B7 /* QuadraticBezierCurve.m */,
+				F54240BD14DA35C9008BC8B7 /* Spline.h */,
+				F54240BE14DA35C9008BC8B7 /* Spline.m */,
+				F54240BF14DA35C9008BC8B7 /* CoreImageProcessing.h */,
+				F54240C014DA35C9008BC8B7 /* CoreImageProcessing.m */,
+				F54240A214DA354A008BC8B7 /* AppDelegate.h */,
+				F54240A314DA354A008BC8B7 /* AppDelegate.m */,
+				F54240A514DA354A008BC8B7 /* ViewController.h */,
+				F54240A614DA354A008BC8B7 /* ViewController.m */,
+				F54240A814DA354A008BC8B7 /* ViewController.xib */,
+				F542409A14DA354A008BC8B7 /* Supporting Files */,
+			);
+			path = ImageProcessing;
+			sourceTree = "<group>";
+		};
+		F542409A14DA354A008BC8B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F542409B14DA354A008BC8B7 /* ImageProcessing-Info.plist */,
+				F542409C14DA354A008BC8B7 /* InfoPlist.strings */,
+				F542409F14DA354A008BC8B7 /* main.m */,
+				F54240A114DA354A008BC8B7 /* ImageProcessing-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F54240C914DA36F5008BC8B7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F54240EB14DA89B2008BC8B7 /* be_Diem.png */,
+				F54240E014DA5FFA008BC8B7 /* background.png */,
+				F54240DE14DA5D98008BC8B7 /* mask.png */,
+				F54240CA14DA3702008BC8B7 /* fx-film-filmgrain-thumb.jpg */,
+				F54240CB14DA3702008BC8B7 /* fx-film-filmgrain.jpg */,
+				F54240CC14DA3702008BC8B7 /* fx-film-mask.jpg */,
+				F54240CD14DA3702008BC8B7 /* fx-film-nostalgia-brown.jpg */,
+				F54240CE14DA3702008BC8B7 /* fx-film-nostalgia-stone.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F542408E14DA354A008BC8B7 /* ImageProcessing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F54240AD14DA354A008BC8B7 /* Build configuration list for PBXNativeTarget "ImageProcessing" */;
+			buildPhases = (
+				F542408B14DA354A008BC8B7 /* Sources */,
+				F542408C14DA354A008BC8B7 /* Frameworks */,
+				F542408D14DA354A008BC8B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageProcessing;
+			productName = ImageProcessing;
+			productReference = F542408F14DA354A008BC8B7 /* ImageProcessing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F542408614DA3549008BC8B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = F542408914DA3549008BC8B7 /* Build configuration list for PBXProject "ImageProcessing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F542408414DA3549008BC8B7;
+			productRefGroup = F542409014DA354A008BC8B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F542408E14DA354A008BC8B7 /* ImageProcessing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F542408D14DA354A008BC8B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F542409E14DA354A008BC8B7 /* InfoPlist.strings in Resources */,
+				F54240AA14DA354A008BC8B7 /* ViewController.xib in Resources */,
+				F54240CF14DA3702008BC8B7 /* fx-film-filmgrain-thumb.jpg in Resources */,
+				F54240D014DA3702008BC8B7 /* fx-film-filmgrain.jpg in Resources */,
+				F54240D114DA3702008BC8B7 /* fx-film-mask.jpg in Resources */,
+				F54240D214DA3702008BC8B7 /* fx-film-nostalgia-brown.jpg in Resources */,
+				F54240D314DA3702008BC8B7 /* fx-film-nostalgia-stone.jpg in Resources */,
+				F54240DF14DA5D98008BC8B7 /* mask.png in Resources */,
+				F54240E114DA5FFB008BC8B7 /* background.png in Resources */,
+				F54240EC14DA89B2008BC8B7 /* be_Diem.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F542408B14DA354A008BC8B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54240A014DA354A008BC8B7 /* main.m in Sources */,
+				F54240A414DA354A008BC8B7 /* AppDelegate.m in Sources */,
+				F54240A714DA354A008BC8B7 /* ViewController.m in Sources */,
+				F54240C114DA35C9008BC8B7 /* BezierCurve.m in Sources */,
+				F54240C214DA35C9008BC8B7 /* CatmullRomSpline.m in Sources */,
+				F54240C314DA35C9008BC8B7 /* CubicBezierCurve.m in Sources */,
+				F54240C414DA35C9008BC8B7 /* LinearBezierCurve.m in Sources */,
+				F54240C514DA35C9008BC8B7 /* NSArray_PointArray.m in Sources */,
+				F54240C614DA35C9008BC8B7 /* QuadraticBezierCurve.m in Sources */,
+				F54240C714DA35C9008BC8B7 /* Spline.m in Sources */,
+				F54240C814DA35C9008BC8B7 /* CoreImageProcessing.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F542409C14DA354A008BC8B7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F542409D14DA354A008BC8B7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F54240A814DA354A008BC8B7 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F54240A914DA354A008BC8B7 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F54240AB14DA354A008BC8B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F54240AC14DA354A008BC8B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F54240AE14DA354A008BC8B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageProcessing/ImageProcessing-Prefix.pch";
+				INFOPLIST_FILE = "ImageProcessing/ImageProcessing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F54240AF14DA354A008BC8B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageProcessing/ImageProcessing-Prefix.pch";
+				INFOPLIST_FILE = "ImageProcessing/ImageProcessing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F542408914DA3549008BC8B7 /* Build configuration list for PBXProject "ImageProcessing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54240AB14DA354A008BC8B7 /* Debug */,
+				F54240AC14DA354A008BC8B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F54240AD14DA354A008BC8B7 /* Build configuration list for PBXNativeTarget "ImageProcessing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54240AE14DA354A008BC8B7 /* Debug */,
+				F54240AF14DA354A008BC8B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F542408614DA3549008BC8B7 /* Project object */;
+}
