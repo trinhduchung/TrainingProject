@@ -22,8 +22,8 @@
     [super dealloc];
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //link : https://github.com/mobfarm/FastPdfKit
     //load all pdf files
     [FileHelper copyFileFrom:[FileHelper bundlePath:@"Reader.pdf"] toDes:[FileHelper documentsPathWithFileName:@"Reader.pdf"]];
     [FileHelper copyFileFrom:[FileHelper bundlePath:@"tesss.pdf"] toDes:[FileHelper documentsPathWithFileName:@"tesss.pdf"]];
