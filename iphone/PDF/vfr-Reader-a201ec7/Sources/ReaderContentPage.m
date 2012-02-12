@@ -171,7 +171,7 @@
 			}
 		}
 
-//		[self highlightPageLinks]; // For link support debugging
+		[self highlightPageLinks]; // For link support debugging
 	}
 }
 

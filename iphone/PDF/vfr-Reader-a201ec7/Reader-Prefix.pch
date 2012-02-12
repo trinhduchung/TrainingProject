@@ -29,4 +29,5 @@
 	#import <CoreGraphics/CoreGraphics.h>
 	#import <QuartzCore/QuartzCore.h>
 	#import <ImageIO/ImageIO.h>
+    #import "config.h"
 #endif
