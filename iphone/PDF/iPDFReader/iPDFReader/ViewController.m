@@ -11,6 +11,8 @@
 #import "ReaderViewController.h"
 #import "PDFDocumentManager.h"
 #import "MFDocumentManager.h"
+#import "FPKGlyphBox.h"
+#import "MFTextItem.h"
 
 @implementation ViewController
 #define DEMO_VIEW_CONTROLLER_PUSH TRUE
@@ -91,6 +93,24 @@
     NSURL *documentUrl = [NSURL fileURLWithPath:filePath];
     
     MFDocumentManager *documentManager = [[MFDocumentManager alloc] initWithFileUrl:documentUrl];
+    
+    int numberpage = [documentManager numberOfPages];
+    for (int i = 0;i < numberpage;i++) {
+        unsigned int *unicodes;
+//        *unicodes = 32;
+        NSLog(@"%d",*unicodes);
+        FPKGlyphBox * box = [[FPKGlyphBox alloc] initWithBox:CGRectMake(300, 400, 100, 100) unicodes:unicodes length:4];
+        NSLog(@"%d",*unicodes);
+        NSString * text = [box text];
+        NSLog(@"text : %@",text);
+        NSArray *arr = [[NSArray alloc] init];
+        arr = [documentManager glyphBoxesForPage:i];
+        if (arr != nil && [arr count] > 0) {
+            FPKGlyphBox * item = (FPKGlyphBox *)[arr objectAtIndex:0];
+            
+            NSLog(@"%@",item.text);
+        }
+    }
     
     [[PDFDocumentManager sharedInstance] withDocumentManager:documentManager];
     documentManager.resourceFolder = [[NSBundle mainBundle] resourcePath];

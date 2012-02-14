@@ -9,6 +9,8 @@
 #import "TextDisplayViewController.h"
 #import "PDFDocumentManager.h"
 #import "MFDocumentManager.h"
+#import "FPKGlyphBox.h"
+
 @implementation TextDisplayViewController
 @synthesize textView, activityIndicatorView;
 @synthesize text;
@@ -47,8 +49,15 @@
 	// If you want to use a different profile pass a reference to a MFProfile.
     
     // Use -(void)test_wholeTextForPage:(NSUInteger)page if you want to test the new text extraction engine instead.
-    NSString * someText = [[[PDFDocumentManager sharedInstance].documentManager wholeTextForPage:[page unsignedIntValue]] copy];//convertPDF(_path);
-	
+    MFDocumentManager * documentManager = [PDFDocumentManager sharedInstance].documentManager;
+    NSString * someText = [[documentManager wholeTextForPage:[page unsignedIntValue]] copy];//convertPDF(_path);
+    
+//    FPKGlyphBox * glyphBox = [[FPKGlyphBox alloc] initWithBox:CGRectMake(0, 0, 320, 480) unicodes:nil length:320];
+    
+//	NSArray * glyphBoxs = [documentManager glyphBoxesForPage:1];
+//    NSString * glyphText = [FPKGlyphBox textFromBoxArray:glyphBoxs];
+//    NSString *text = [someText stringByAppendingString:glyphText];
+    
 	// NSString *someText = [[documentManager wholeTextForPage:[page intValue] withProfile:NULL]copy];
 	
 	
