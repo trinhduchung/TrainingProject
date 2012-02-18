@@ -5,6 +5,8 @@ import java.util.List;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
+import android.widget.ZoomButtonsController.OnZoomListener;
+
 import com.google.android.maps.MapView;
 import com.map.MapApplication;
 import com.map.R;
@@ -43,14 +45,34 @@ public class MapLocationViewer extends LinearLayout {
 		overlay = new MapLocationOverlay(this);
 		mapView.getOverlays().add(overlay);
 
-    	mapView.getController().setZoom(14);
+    	mapView.getController().setZoom(16);
     	mapView.getController().setCenter(getMapLocations().get(0).getPoint());
     	mapView.displayZoomControls(true);
-    	
+    	mapView.setBuiltInZoomControls(true);
+		mapView.getZoomButtonsController().setOnZoomListener(new OnZoomListener() {
+				
+			@Override
+			public void onZoom(boolean zoomIn) {
+				overlay.resetHashMap();
+				if (zoomIn) {
+					mapView.getController().setZoom(mapView.getZoomLevel() + 1);
+				} else {
+					mapView.getController().setZoom(mapView.getZoomLevel() - 1);
+				}
+			}
+			
+			@Override
+			public void onVisibilityChanged(boolean visible) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		 
     	
 	}
 	
 	public List<MapLocation> getMapLocations() {
+		db = new DatabaseHelper(context);
 		mapLocations = MapApplication.Instance().mapLocations;
 		if (mapLocations == null | mapLocations.size() <= 0) {
 			mapLocations = new ArrayList<MapLocation>();

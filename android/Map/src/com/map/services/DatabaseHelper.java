@@ -14,7 +14,7 @@ import com.map.view.MapLocation;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 	private Context _context;
-	public static final String DBName = "mobion_music.db";
+	public static final String DBName = "map_view.db";
 	public static final int DBVersion = 4;
 	
 	/* MapLocation */
