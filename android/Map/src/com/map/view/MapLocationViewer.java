@@ -45,33 +45,54 @@ public class MapLocationViewer extends LinearLayout {
 		overlay = new MapLocationOverlay(this);
 		mapView.getOverlays().add(overlay);
 
-    	mapView.getController().setZoom(14);
+    	mapView.getController().setZoom(16);
     	mapView.getController().setCenter(getMapLocations().get(0).getPoint());
     	mapView.setBuiltInZoomControls(true);
     	mapView.displayZoomControls(true);
+<<<<<<< HEAD
     	mapView.getZoomButtonsController().setVisible(true);
     	mapView.getZoomButtonsController().setOnZoomListener(new OnZoomListener() {
 			
 			@Override
 			public void onZoom(boolean zoomIn) {
 				System.out.println(mapView.getZoomLevel());
+=======
+    	mapView.setBuiltInZoomControls(true);
+		mapView.getZoomButtonsController().setOnZoomListener(new OnZoomListener() {
+				
+			@Override
+			public void onZoom(boolean zoomIn) {
+				overlay.resetHashMap();
+>>>>>>> 702f2a40e9aaa9b039798b61879259f4319aa99c
 				if (zoomIn) {
 					mapView.getController().setZoom(mapView.getZoomLevel() + 1);
 				} else {
 					mapView.getController().setZoom(mapView.getZoomLevel() - 1);
 				}
+<<<<<<< HEAD
 				if (mapView.getZoomLevel() <= 14) {
 					System.out.println("lower 14");
 				} else {
 					System.out.println("upper 14");
 				}
+=======
+>>>>>>> 702f2a40e9aaa9b039798b61879259f4319aa99c
 			}
 			
 			@Override
 			public void onVisibilityChanged(boolean visible) {
+<<<<<<< HEAD
 				
 			}
 		});
+=======
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		 
+    	
+>>>>>>> 702f2a40e9aaa9b039798b61879259f4319aa99c
 	}
 	
 	public List<MapLocation> getMapLocations() {
