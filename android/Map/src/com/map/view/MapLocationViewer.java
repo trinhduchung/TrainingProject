@@ -5,6 +5,8 @@ import java.util.List;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
+import android.widget.ZoomButtonsController.OnZoomListener;
+
 import com.google.android.maps.MapView;
 import com.map.MapApplication;
 import com.map.R;
@@ -35,7 +37,7 @@ public class MapLocationViewer extends LinearLayout {
 		setOrientation(VERTICAL);
 		setLayoutParams(new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT,android.view.ViewGroup.LayoutParams.FILL_PARENT));
 
-		mapView = new MapView(getContext(),"0_CaK9g9NQHD2sDVeZn8qIFM1q1lcMdG2fm_Slw");
+		mapView = new MapView(getContext(),"0_CaK9g9NQHB8LmHq564xMiIWt2La3dpx7XjULg");
 		mapView.setEnabled(true);
 		mapView.setClickable(true);
 		addView(mapView);
@@ -45,12 +47,35 @@ public class MapLocationViewer extends LinearLayout {
 
     	mapView.getController().setZoom(14);
     	mapView.getController().setCenter(getMapLocations().get(0).getPoint());
+    	mapView.setBuiltInZoomControls(true);
     	mapView.displayZoomControls(true);
-    	
-    	
+    	mapView.getZoomButtonsController().setVisible(true);
+    	mapView.getZoomButtonsController().setOnZoomListener(new OnZoomListener() {
+			
+			@Override
+			public void onZoom(boolean zoomIn) {
+				System.out.println(mapView.getZoomLevel());
+				if (zoomIn) {
+					mapView.getController().setZoom(mapView.getZoomLevel() + 1);
+				} else {
+					mapView.getController().setZoom(mapView.getZoomLevel() - 1);
+				}
+				if (mapView.getZoomLevel() <= 14) {
+					System.out.println("lower 14");
+				} else {
+					System.out.println("upper 14");
+				}
+			}
+			
+			@Override
+			public void onVisibilityChanged(boolean visible) {
+				
+			}
+		});
 	}
 	
 	public List<MapLocation> getMapLocations() {
+		db = new DatabaseHelper(context);
 		mapLocations = MapApplication.Instance().mapLocations;
 		if (mapLocations == null | mapLocations.size() <= 0) {
 			mapLocations = new ArrayList<MapLocation>();

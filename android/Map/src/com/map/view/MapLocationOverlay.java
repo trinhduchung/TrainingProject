@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -148,7 +149,9 @@ public class MapLocationOverlay  extends Overlay {
 				int TEXT_OFFSET_Y = 40;
 				canvas.drawText(selectedMapLocation.getName(),TEXT_OFFSET_X,TEXT_OFFSET_Y,getTextPaint());
 				Bitmap bitmap = ((BitmapDrawable) mImage).getBitmap();
-				canvas.drawBitmap(bitmap, 10, 8, getTextPaint());
+				Rect imageRect = new Rect(10, 8, 60, 60);
+				Rect imgSource = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+				canvas.drawBitmap(bitmap, imgSource, imageRect, getTextPaint());
     		}
     	}
     }
