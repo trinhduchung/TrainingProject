@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">SDPlayer</string>
+    <string name="notification_artist_album">%2$s\n%1$s</string>
+</resources>

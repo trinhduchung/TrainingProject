@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content" android:layout_width="fill_parent"
+	android:paddingBottom="5dip" android:paddingTop="5dip">
+	<TextView android:layout_width="200dip" android:layout_height="wrap_content"
+		android:id="@+id/listsong_short_songCell_title" android:text=""
+		android:textStyle="bold" android:textSize="16dip" android:singleLine="true"
+		android:ellipsize="end" android:textColor="#ffffff"
+		android:layout_alignParentLeft="true" android:paddingLeft="10dip">
+	</TextView>
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/listsong_short_songCell_duration"
+		android:text="" android:textSize="15dip" android:singleLine="true"
+		android:ellipsize="end" android:textColor="#666666"
+		android:layout_alignParentRight="true" android:layout_centerVertical="true">
+	</TextView>
+</RelativeLayout>

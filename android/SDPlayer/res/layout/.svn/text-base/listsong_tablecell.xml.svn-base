@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content" android:layout_width="fill_parent"
+	android:paddingBottom="5dip" android:paddingTop="5dip">
+	<CheckBox android:id="@+id/songCell_checkbox"
+        android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true" android:layout_centerVertical="true"
+        android:layout_marginLeft="5dip" />
+	<gnt.sd.view.SDAlbumCoverArt android:id="@+id/songCell_coverart"
+		android:layout_height="70dip" android:layout_width="70dip"
+		android:layout_toRightOf="@id/songCell_checkbox"
+        android:layout_marginLeft="5dip"  />
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_toRightOf="@id/songCell_coverart" android:paddingLeft="5dip"
+		android:id="@+id/songCell_layoutText">
+		<TextView android:layout_width="200dip"
+			android:layout_height="wrap_content" android:id="@+id/songCell_title"
+			android:text="" android:textStyle="bold" android:textSize="16dip"
+			android:singleLine="true" android:ellipsize="end" android:textColor="#ffffff">
+		</TextView>
+		<TextView android:layout_width="200dip"
+			android:layout_height="wrap_content" android:id="@+id/songCell_artist"
+			android:text="" android:textSize="14dip" android:layout_marginTop="3dip"
+			android:singleLine="true" android:ellipsize="end" android:textColor="#479EAC"></TextView>
+		<TextView android:layout_width="200dip"
+			android:layout_height="wrap_content" android:id="@+id/songCell_album"
+			android:text="" android:textSize="14dip" android:layout_marginTop="3dip"
+			android:singleLine="true" android:ellipsize="end" android:textColor="#479EAC" ></TextView>
+	</LinearLayout>
+	<TextView android:layout_toRightOf="@id/songCell_layoutText"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:textColor="#666666" android:layout_centerInParent="true"
+		android:id="@+id/songName_duration" />
+</RelativeLayout>

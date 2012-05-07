@@ -1,0 +1,101 @@
+package gnt.sd;
+
+import gnt.sd.controller.Service;
+import gnt.sd.controller.ServiceListener;
+import gnt.sd.controller.ServiceRespone;
+import gnt.sd.model.SDAlbumInfo;
+import gnt.sd.view.SDAlbumCoverArt;
+import gnt.sd.view.SDSongAdapter;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.provider.BaseColumns;
+import android.provider.MediaStore.Audio.AlbumColumns;
+import android.provider.MediaStore.Audio.Albums;
+import android.provider.MediaStore.Audio.AudioColumns;
+import android.provider.MediaStore.Audio.Media;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+public class SDAlbumDetailActivity extends SDBaseLibaryActivity implements
+		ServiceListener {
+	TextView _textArtist;
+	TextView _textAlbum;
+	TextView _textReview;
+	SDAlbumCoverArt _coverart;
+	Cursor _cursorAlbum;
+	Cursor _cursorTrack;
+	SDSongAdapter _adapter;
+	Service _serviceReview;
+	ProgressBar _loadingReview;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		ContentResolver contentResolver = getApplication().getContentResolver();
+		long id = getIntent().getLongExtra("album_id", 0);
+		String selection = BaseColumns._ID + "=?";
+		String[] selectionArgs = new String[] { String.valueOf(id) };
+		_cursorAlbum = contentResolver.query(Albums.EXTERNAL_CONTENT_URI, null,
+				selection, selectionArgs, Albums.DEFAULT_SORT_ORDER);
+		if (!_cursorAlbum.moveToFirst()) {
+			finish();
+		}
+		setupUI();
+		_serviceReview = new Service(this);
+		_serviceReview.getAlbumInfo(_cursorAlbum.getString(_cursorAlbum
+				.getColumnIndex(AlbumColumns.ALBUM)), _cursorAlbum
+				.getString(_cursorAlbum
+						.getColumnIndex(AlbumColumns.ARTIST)));
+	}
+
+	public void setupUI() {
+		RelativeLayout header = (RelativeLayout) LayoutInflater.from(this)
+				.inflate(R.layout.albumdetail_headerview, null);
+		_headerView.addView(header);
+		_textArtist = (TextView) header.findViewById(R.id.albumdetail_artist);
+		_textAlbum = (TextView) header.findViewById(R.id.albumdetail_title);
+		_textReview = (TextView) header.findViewById(R.id.albumdetail_review);
+		_loadingReview = (ProgressBar) header
+				.findViewById(R.id.albumdetail_loadreview);
+		_coverart = (SDAlbumCoverArt) header
+				.findViewById(R.id.albumdetail_coverart);
+		_textArtist.setText(_cursorAlbum.getString(_cursorAlbum
+				.getColumnIndex(AlbumColumns.ARTIST)));
+		_textAlbum.setText(_cursorAlbum.getString(_cursorAlbum
+				.getColumnIndex(AlbumColumns.ALBUM)));
+		_coverart.getCoverArt(_cursorAlbum.getLong(_cursorAlbum
+				.getColumnIndex(BaseColumns._ID)));
+
+		ContentResolver contentResolver = getApplication().getContentResolver();
+		String selection = AudioColumns.ALBUM_ID + "=?";
+		String[] selectionArgs = new String[] { String.valueOf(_cursorAlbum
+				.getLong(_cursorAlbum
+						.getColumnIndex(BaseColumns._ID))) };
+		_cursorTrack = contentResolver.query(Media.EXTERNAL_CONTENT_URI, null,
+				selection, selectionArgs, Media.DEFAULT_SORT_ORDER);
+		_adapter = new SDSongAdapter(this, _cursorTrack, false);
+		_listView.setAdapter(_adapter);
+	}
+
+	@Override
+	public void onComplete(Service service, ServiceRespone result) {
+		if (result.isSuccess()) {
+			SDAlbumInfo albumInfo = (SDAlbumInfo) result.getData();
+			if (albumInfo.getSummary() != null
+					&& albumInfo.getSummary().length() > 0)
+				_textReview.setText("Review: " + albumInfo.getSummary());
+			else {
+				_textReview.setText("Review: Not found");
+			}
+		} else {
+			_textReview.setText("Review: Not found");
+		}
+		_loadingReview.setVisibility(View.GONE);
+	}
+
+}

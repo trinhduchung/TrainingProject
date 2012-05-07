@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="gnt.sd" android:versionCode="1" android:versionName="1.0">
+	<supports-screens android:anyDensity="true"
+		android:normalScreens="true" android:largeScreens="true" />
+	<application android:icon="@drawable/icon" android:label="@string/app_name" android:name=".SDApplication"
+		android:debuggable="true">
+		<activity android:name=".MainActivity" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name=".SDListPlayStreamingActivity"
+      android:theme="@android:style/Theme.Light.NoTitleBar"
+      android:screenOrientation="portrait" >
+       <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="http" />
+            <data android:mimeType="audio/mp3"/>
+            <data android:mimeType="audio/x-mp3"/>
+            <data android:mimeType="audio/mpeg"/>
+            <data android:mimeType="audio/mp4"/>
+            <data android:mimeType="audio/mp4a-latm"/>
+            <data android:mimeType="application/ogg"/>
+            <data android:mimeType="application/x-ogg"/>
+            <data android:mimeType="audio/ogg"/>
+        </intent-filter>
+      </activity>
+		
+		<activity android:name=".SDPlayerActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait" ><intent-filter>
+        	<action android:name="android.intent.action.VIEW" />
+        	<data android:scheme="content"/>
+          	<data android:scheme="file"/>
+          	<data android:mimeType="audio/*"/>
+          	<data android:mimeType="application/ogg"/>
+          	<data android:mimeType="application/x-ogg"/>
+          	<data android:mimeType="application/itunes"/>
+        	<category android:name="android.intent.category.DEFAULT" />
+      	</intent-filter>
+			</activity>
+		
+		<service android:name=".SDPlayerService"/>
+		
+		<activity android:name=".SDAlbumActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait" />
+		<activity android:name=".SDArtistActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait" />
+		<activity android:name=".SDSongActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait" />
+		<activity android:name=".SDPlaylistActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity android:name=".SDHotPlaylistActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity android:name=".SDAlbumDetailActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity android:name=".SDArtistDetailActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity android:name=".SDPlaylistDetailActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity android:name=".SDNewPlayListActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize" />
+		<activity android:name=".SDDeletePlaylistActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait" />
+		<activity android:name=".SDBioActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait" />
+		<activity android:name=".SDAddSongActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait" />
+		<activity android:name=".SDAddToPlaylistActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="portrait" />
+		<activity android:name=".SDAlbumLandActivity"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:screenOrientation="landscape" />
+		<activity android:name=".SDSearchableActivity"
+			android:launchMode="singleTop" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.SEARCH" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<meta-data android:name="android.app.searchable"
+				android:resource="@xml/searchable" />
+		</activity>
+		<meta-data android:name="android.app.searchable"
+			android:value=".SDSearchableActivity" />
+	</application>
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.CONTROL_LOCATION_UPDATES" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-feature android:name="android.hardware.camera" />
+	<uses-feature android:name="android.hardware.camera.autofocus" />
+</manifest> 

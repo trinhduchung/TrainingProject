@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"  android:id="@+id/artistbio_layoutcover">
+		<ProgressBar android:id="@+id/artistbio_loadbio"
+			android:layout_width="40dip" android:layout_height="40dip"
+			android:layout_centerInParent="true"/>
+		<gnt.sd.view.CoverFlow android:layout_width="fill_parent"
+			android:layout_height="150dip" android:id="@+id/artistbio_coverflow"
+			android:layout_marginTop="10dip" />
+	</RelativeLayout>
+	<TextView android:id="@+id/artistbio_title"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:textColor="#000000" android:textSize="24dip"
+		android:layout_below="@id/artistbio_layoutcover"
+		android:layout_centerHorizontal="true" />
+	<ScrollView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_below="@id/artistbio_title">
+		<TextView android:id="@+id/artistbio_bio"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:textColor="#000000" android:textSize="14dip"
+			android:layout_centerHorizontal="true" android:padding="5dip" />
+	</ScrollView>
+</RelativeLayout>

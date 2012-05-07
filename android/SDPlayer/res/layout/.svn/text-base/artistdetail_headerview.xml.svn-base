@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/artistdetail_header" android:layout_width="fill_parent"
+	android:layout_height="100dip">
+	<gnt.sd.view.SDAlbumCoverArt android:id="@+id/artistdetail_coverart"
+		android:layout_width="80dip" android:layout_height="80dip"
+		android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_toRightOf="@id/artistdetail_coverart">
+		<TextView android:id="@+id/artistdetail_title"
+			android:layout_width="200dip" android:layout_height="wrap_content"
+			android:layout_marginLeft="10dip" android:text="" android:singleLine="true"
+			android:layout_centerVertical="true" android:ellipsize="end"
+			android:textColor="#ffffff" android:textSize="16dip" />
+		<RelativeLayout android:layout_width="fill_parent"
+			android:layout_height="70dip" android:background="@drawable/headerbutton_selector"
+			android:layout_marginLeft="10dip" android:clickable="true"
+			android:paddingTop="5dip" android:id="@+id/artistdetail_layoutbio">
+			<ProgressBar android:id="@+id/artistdetail_loadbio"
+				android:layout_width="40dip" android:layout_height="40dip"
+				android:layout_marginLeft="10dip" />
+			<TextView android:id="@+id/artistdetail_bio"
+				android:layout_width="200dip" android:layout_height="wrap_content"
+				android:layout_marginLeft="10dip" android:text="" android:lines="4"
+				android:textColor="#ffffff" android:textSize="10dip" />
+		</RelativeLayout>
+	</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:id="@+id/player_mini_container"
+	android:background="@layout/header_controll" android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+	<ImageView android:id="@+id/player_mini_arrow"
+		android:layout_width="fill_parent" android:layout_height="20dip"
+		android:src="@drawable/music_play_disc_arrow_up" />
+	<LinearLayout android:id="@+id/player_mini_control"
+		android:orientation="horizontal" android:layout_width="fill_parent"
+		android:layout_height="80dip">
+		<ImageButton android:id="@+id/player_mini_coverart"
+			android:onClick="onCoverArtClicked"
+			android:layout_width="60dip" android:layout_height="60dip"
+			android:layout_margin="10dip" android:background="@drawable/music_play_grid_icon" />
+		<ImageView android:id="@+id/player_mini_imageButtonREW"
+			android:paddingLeft="0.0dip" android:paddingTop="0.0dip"
+			android:focusable="true" android:visibility="visible"
+			android:clickable="true" android:layout_width="70dip"
+			android:layout_height="fill_parent" android:background="@drawable/music_play_control_rew_btn_selector"
+			android:layout_centerVertical="true" />
+		<ImageView android:id="@+id/player_mini_imageButtonPlay"
+			android:paddingLeft="0.0dip" android:paddingTop="0.0dip"
+			android:focusable="true" android:visibility="visible"
+			android:clickable="true" android:layout_width="70dip"
+			android:layout_height="fill_parent" android:layout_marginLeft="0.0dip"
+			android:layout_centerHorizontal="true" android:layout_centerVertical="true"
+			android:background="@drawable/music_play_control_play_btn_selector" />
+		<ImageView android:focusable="true" android:layout_height="fill_parent"
+			android:layout_width="70dip" android:paddingLeft="0.0dip"
+			android:background="@drawable/music_play_control_ff_btn_selector"
+			android:id="@+id/player_mini_imageButtonFF" android:paddingTop="0.0dip"
+			android:clickable="true" android:visibility="visible"></ImageView>
+		<ImageView android:id="@+id/player_mini_imageButtonPause"
+			android:paddingLeft="0.0dip" android:paddingTop="0.0dip"
+			android:focusable="true" android:visibility="gone" android:clickable="true"
+			android:layout_width="70dip" android:layout_height="fill_parent"
+			android:layout_marginLeft="0.0dip" android:layout_centerHorizontal="true"
+			android:layout_centerVertical="true" />
+	</LinearLayout>
+</LinearLayout>

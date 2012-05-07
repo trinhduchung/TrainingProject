@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:id="@+id/lyricView_container" android:background="#00000000" android:clickable="true">
+	<gnt.sd.view.SDAlbumCoverArt android:id="@+id/cover_art"
+		android:layout_width="fill_parent" android:layout_height="fill_parent" /><!-- 
+		<include android:id="@+id/player_lyric" layout="@layout/lyric_view" android:layout_width="fill_parent" 
+		android:layout_height="fill_parent" /> -->
+	<WebView android:id="@+id/lyric"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:textSize="16dp" android:padding="10dp" android:background="#00000000"></WebView>
+	<ProgressBar android:id="@+id/progress_bar_waiting_lyric"
+		android:layout_height="wrap_content" android:layout_width="wrap_content"
+		android:layout_centerInParent="true" />
+</RelativeLayout>

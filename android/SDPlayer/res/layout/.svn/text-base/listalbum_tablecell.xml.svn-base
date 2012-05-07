@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content" android:layout_width="fill_parent"
+	android:orientation="horizontal" android:gravity="center_vertical"
+	android:paddingBottom="5dip" android:paddingTop="5dip">
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal" android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<gnt.sd.view.SDAlbumCoverArt android:id="@+id/albumCell_coverart"
+			android:layout_height="70dip" android:layout_width="70dip"
+			android:layout_alignParentLeft="true" />
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="vertical"
+			android:layout_weight="1.0" android:layout_toRightOf="@id/albumCell_coverart"
+			android:paddingLeft="5dip" android:id="@+id/albumCell_layoutText">
+			<TextView android:layout_width="200dip"
+				android:layout_height="wrap_content" android:id="@+id/albumCell_artist"
+				android:text="" android:textSize="14dip" android:layout_marginTop="3dip"
+				android:singleLine="true" android:ellipsize="end" android:textColor="#ffffff"></TextView>
+			<TextView android:layout_width="200dip"
+				android:layout_height="wrap_content" android:id="@+id/albumCell_album"
+				android:text="" android:textStyle="bold" android:textSize="16dip"
+				android:singleLine="true" android:ellipsize="end" android:textColor="#ffffff">
+			</TextView>
+		</LinearLayout>
+		</RelativeLayout>
+</RelativeLayout>

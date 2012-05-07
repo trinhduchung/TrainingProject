@@ -1,0 +1,55 @@
+10
+
+dir
+71
+https://sdplayer.googlecode.com/svn/trunk/%20sdplayer%20--username%20hankorea143/res
+https://sdplayer.googlecode.com/svn
+
+
+
+2011-03-30T03:52:16.740113Z
+67
+trinhduchung266@gmail.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2d83e007-cf3f-99da-3096-d52a29847149
+
+anim
+dir
+
+drawable
+dir
+
+drawable-hdpi
+dir
+
+drawable-ldpi
+dir
+
+drawable-mdpi
+dir
+
+layout
+dir
+
+raw
+dir
+
+values
+dir
+
+xml
+dir
+

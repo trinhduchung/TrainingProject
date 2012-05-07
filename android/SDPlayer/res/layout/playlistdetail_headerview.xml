@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/artistdetail_header" android:layout_width="fill_parent"
+	android:layout_height="60dip">
+	<gnt.sd.view.SDPlaylistCoverArt android:id="@+id/playlistdetail_coverart"
+		android:layout_width="50dip" android:layout_height="50dip"
+		android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_toRightOf="@id/playlistdetail_coverart">
+		<TextView android:id="@+id/playlistdetail_title"
+			android:layout_width="200dip" android:layout_height="wrap_content"
+			android:layout_marginLeft="10dip" android:text="" android:singleLine="true"
+			android:layout_centerVertical="true" android:ellipsize="end"
+			android:textColor="#ffffff" android:textSize="16dip" />
+	</LinearLayout>
+</RelativeLayout>

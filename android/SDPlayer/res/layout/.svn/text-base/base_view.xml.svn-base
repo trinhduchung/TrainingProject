@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="#000000">
+	<LinearLayout android:layout_width="fill_parent"
+		android:id="@+id/baseview_header" android:layout_height="110dip"
+		android:padding="10dip" android:orientation="vertical"
+		android:background="@drawable/list_create_bg">
+	</LinearLayout>
+	<ListView android:id="@+id/baseview_list"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:cacheColorHint="#00000000" android:divider="@layout/list_divider"
+		android:dividerHeight="1dip" android:layout_below="@id/baseview_header">
+	</ListView>
+	<gnt.sd.view.SDPlayerMiniView android:id="@+id/baseview_miniplayer"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true"
+	 android:layout_marginBottom="-70dip"/>
+</RelativeLayout>

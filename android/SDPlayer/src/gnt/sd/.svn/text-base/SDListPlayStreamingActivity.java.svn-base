@@ -1,0 +1,144 @@
+package gnt.sd;
+
+import gnt.sd.SDListPlayStreamingActivity.ListItemAdapter.RowViewHolder;
+import gnt.sd.model.SDAudio;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+public class SDListPlayStreamingActivity extends Activity {
+
+	List<SDAudio> _list = new ArrayList<SDAudio>();
+	ListItemAdapter _adapter;
+	ListView _lv;
+	Context _context = this;
+	SDStreamingMediaPlayer _streamPlayer;
+	RowViewHolder[] _listCached;
+
+	@SuppressWarnings("unchecked")
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.list_play_streaming);
+		_list = (List<SDAudio>) SDApplication.Instance().getData("list");
+		_adapter = new ListItemAdapter(_list);
+		_lv = (ListView) findViewById(R.id.list);
+		_lv.setAdapter(_adapter);
+		_listCached = new RowViewHolder[(_list == null) ? 0 : _list.size()];
+	}
+
+	class ListItemAdapter extends BaseAdapter {
+
+		List<SDAudio> _listAudio = new ArrayList<SDAudio>();
+
+		public ListItemAdapter(List<SDAudio> list) {
+			_listAudio = list;
+		}
+
+		@Override
+		public int getCount() {
+			if (_listAudio != null) {
+				return _listAudio.size();
+			}
+			return 0;
+		}
+
+		@Override
+		public SDAudio getItem(int position) {
+			return _listAudio.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			if (_listCached[position] == null) {
+				final RowViewHolder row = new RowViewHolder(
+						SDListPlayStreamingActivity.this);
+				final SDAudio audio = _listAudio.get(position);
+				row._title.setText(audio.getTitle());
+				row._play.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						SDApplication.Instance().putData("audio", audio);
+						SDApplication.Instance().putData(SDPlayerActivity.CODE_STREAMING, true);
+						startActivity(new Intent(SDListPlayStreamingActivity.this, SDPlayerActivity.class));
+//						if (_streamPlayer != null) {
+//							_streamPlayer.interrupt();
+//						}
+//						_streamPlayer = new SDStreamingMediaPlayer(_context,
+//								row._play, row._progress);
+//						try {
+//							if(_streamPlayer.getMediaPlayer() != null) {
+//								if(_streamPlayer.isPlaying()) {
+//									
+//								}
+//							_streamPlayer
+//									.startStreaming(
+//											audio, 216);
+//							}
+//						} catch (IOException e) {
+//							e.printStackTrace();
+//						}
+					}
+				});
+				_listCached[position] = row;
+			}
+			return _listCached[position];
+		}
+
+		class RowViewHolder extends LinearLayout {
+
+			public RowViewHolder(Context context) {
+				super(context);
+				inflatViews();
+			}
+
+			private void inflatViews() {
+				LayoutInflater.from(SDListPlayStreamingActivity.this).inflate(
+						R.layout.player_streaming_item, this);
+				_logo = (ImageView) findViewById(R.id.logo);
+				_title = (TextView) findViewById(R.id.song_name);
+				_play = (ImageButton) findViewById(R.id.play);
+				_download = (ImageView) findViewById(R.id.download);
+				_progress = (ProgressBar) findViewById(R.id.seek_bar_progress);
+
+			}
+
+			public ImageView _logo;
+			public TextView _title;
+			public ProgressBar _progress;
+			public ImageButton _play;
+			public ImageView _download;
+
+		}
+	}
+
+	public void onDownloadClicked(View v) {
+
+	}
+
+	public void onPlayClicked(View v) {
+
+	}
+}

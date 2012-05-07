@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:layout_width="fill_parent"
+	android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="#000000">
+	<RelativeLayout android:id="@+id/CreatePlaylistButton"
+		android:background="@drawable/list_create_bg" android:layout_width="fill_parent"
+		android:layout_height="80dip">
+		<ImageButton android:id="@+id/newplayist_buttonImage"
+			android:background="@drawable/add_cover_art" android:layout_width="60dip"
+			android:layout_height="60dip" android:layout_marginLeft="6.659973dip"
+			android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+		<EditText android:id="@+id/newplaylist_name"
+			android:layout_width="200dip" android:layout_height="wrap_content"
+			android:layout_marginLeft="10dip" android:text="New playlist"
+			android:singleLine="true" android:layout_toRightOf="@id/newplayist_buttonImage"
+			android:layout_centerVertical="true" />
+	</RelativeLayout>
+	<RelativeLayout android:id="@+id/CreatePlaylistButton"
+		android:background="@drawable/list_create_bg" android:layout_width="fill_parent"
+		android:layout_height="80dip" android:layout_alignParentBottom="true">
+		<Button android:id="@+id/newplayist_buttonSave"
+			android:background="@drawable/defaultbutton" android:layout_width="100dip"
+			android:layout_height="50dip" android:layout_marginLeft="50dip"
+			android:layout_alignParentLeft="true" android:layout_centerVertical="true"
+			android:text="Save" />
+		<Button android:id="@+id/newplayist_buttonCancel"
+			android:background="@drawable/defaultbutton" android:layout_width="100dip"
+			android:layout_height="50dip" android:layout_marginLeft="20dip"
+			android:layout_toRightOf="@id/newplayist_buttonSave"
+			android:layout_centerVertical="true" android:text="Cancel" />
+	</RelativeLayout>
+</RelativeLayout>

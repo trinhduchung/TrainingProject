@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background" android:drawable="@drawable/progress_base" />
+    <item android:id="@android:id/progress">
+        <clip android:clipOrientation="horizontal" android:drawable="@drawable/progress_blue" />
+    </item><!--
+    <item android:id="@+android:id/SecondaryProgress">
+        <clip android:clipOrientation="horizontal" android:drawable="@drawable/music_play_progressive_bar_list_bg" />
+    </item>
+--></layer-list>

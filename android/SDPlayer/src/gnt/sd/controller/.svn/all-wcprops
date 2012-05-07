@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/71/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/controller
+END
+ServiceAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/71/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/controller/ServiceAction.java
+END
+ResultCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/17/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/controller/ResultCode.java
+END
+DataParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/72/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/controller/DataParser.java
+END
+ServiceListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/17/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/controller/ServiceListener.java
+END
+Service.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/71/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/controller/Service.java
+END
+DataType.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/17/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/controller/DataType.java
+END
+ServiceRespone.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/17/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/controller/ServiceRespone.java
+END

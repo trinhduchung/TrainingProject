@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/71/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd
+END
+SDNewPlayListActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDNewPlayListActivity.java
+END
+SDIPlayerListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDIPlayerListener.java
+END
+SDAddToPlaylistActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDAddToPlaylistActivity.java
+END
+MainActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/45/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/MainActivity.java
+END
+SDArtistActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/72/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDArtistActivity.java
+END
+SDPlaylistDetailActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/52/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDPlaylistDetailActivity.java
+END
+SDAlbumDetailActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/52/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDAlbumDetailActivity.java
+END
+SDAddSongActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDAddSongActivity.java
+END
+SDPlaylistActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDPlaylistActivity.java
+END
+SDIMusicPlayerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDIMusicPlayerImpl.java
+END
+SDIMusicPlayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDIMusicPlayer.java
+END
+SDListPlayStreamingActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDListPlayStreamingActivity.java
+END
+SDAlbumActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDAlbumActivity.java
+END
+SDLibrary.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/59/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDLibrary.java
+END
+SDBioActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/52/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDBioActivity.java
+END
+SDPlayerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDPlayerService.java
+END
+SDSearchableActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/13/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDSearchableActivity.java
+END
+SDPlayerActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDPlayerActivity.java
+END
+SDApplication.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDApplication.java
+END
+IPlayerService.aidl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/43/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/IPlayerService.aidl
+END
+SDDeletePlaylistActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDDeletePlaylistActivity.java
+END
+SDProgressMonitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDProgressMonitor.java
+END
+SDAlbumLandActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDAlbumLandActivity.java
+END
+SDArtistDetailActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/52/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDArtistDetailActivity.java
+END
+SDAudio.aidl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/43/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDAudio.aidl
+END
+SDNowPlaylist.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/52/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDNowPlaylist.java
+END
+SDSongActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDSongActivity.java
+END
+SDIGetSongInfoListenerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/32/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDIGetSongInfoListenerImpl.java
+END
+SDIGetSongInfoListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/32/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDIGetSongInfoListener.java
+END
+SDPlaylist.aidl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/43/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDPlaylist.aidl
+END
+SDBaseLibaryActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/52/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDBaseLibaryActivity.java
+END
+SDStreamingMediaPlayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDStreamingMediaPlayer.java
+END
+SDPlayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/73/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/SDPlayer.java
+END

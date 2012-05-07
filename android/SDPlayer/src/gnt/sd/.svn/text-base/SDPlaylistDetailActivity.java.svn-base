@@ -1,0 +1,60 @@
+package gnt.sd;
+
+import gnt.sd.view.SDPlaylistCoverArt;
+import gnt.sd.view.SDSongAdapter;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.provider.BaseColumns;
+import android.provider.MediaStore.Audio.Playlists;
+import android.provider.MediaStore.Audio.PlaylistsColumns;
+import android.view.LayoutInflater;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+public class SDPlaylistDetailActivity extends SDBaseLibaryActivity {
+	TextView _textTitle;
+	SDPlaylistCoverArt _coverart;
+	Cursor _cursorPlaylist;
+	Cursor _cursorTrack;
+	SDSongAdapter _adapter;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		ContentResolver contentResolver = getApplication().getContentResolver();
+		long id = getIntent().getLongExtra("playlist_id", 0);
+		String selection = BaseColumns._ID + "=?";
+		String[] selectionArgs = new String[] { String.valueOf(id) };
+		_cursorPlaylist = contentResolver.query(Playlists.EXTERNAL_CONTENT_URI,
+				null, selection, selectionArgs, Playlists.DEFAULT_SORT_ORDER);
+		if (!_cursorPlaylist.moveToFirst()) {
+			finish();
+		}
+		setupUI();
+	}
+
+	public void setupUI() {
+		_headerView.getLayoutParams().height = (int) (60 * getResources().getDisplayMetrics().density);
+		RelativeLayout header = (RelativeLayout) LayoutInflater.from(this)
+				.inflate(R.layout.playlistdetail_headerview, null);
+		_headerView.addView(header);
+		_textTitle = (TextView) header.findViewById(R.id.playlistdetail_title);
+		_coverart = (SDPlaylistCoverArt) header
+				.findViewById(R.id.playlistdetail_coverart);
+		_textTitle.setText(_cursorPlaylist.getString(_cursorPlaylist
+				.getColumnIndex(PlaylistsColumns.NAME)));
+		_coverart.getCoverArt(_cursorPlaylist.getLong(_cursorPlaylist
+				.getColumnIndex(BaseColumns._ID)));
+
+		ContentResolver contentResolver = getApplication().getContentResolver();
+		_cursorTrack = contentResolver.query(Playlists.Members.getContentUri(
+				"external", _cursorPlaylist.getLong(_cursorPlaylist
+						.getColumnIndex(BaseColumns._ID))),
+				null, null, null, Playlists.Members.DEFAULT_SORT_ORDER);
+		_adapter = new SDSongAdapter(this, _cursorTrack, false);
+		_listView.setAdapter(_adapter);
+	}
+
+}

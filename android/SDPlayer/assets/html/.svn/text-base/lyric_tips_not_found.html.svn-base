@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,height=278,user-scalable=no,initial-scale=1.0" />
+<style type="text/css">
+* {-webkit-touch-callout:none; -webkit-user-select:none;}
+body {font-size: 100%; text-align:justify;background-color: transparent;}
+.x-lyric-container {font-family:HiraKakuProN-W6;font-size:100%;margin:70px 10px 100px 5px;color:#FFF}
+.x-nolyric-title {font-size:110%;text-align:center;}
+.x-nolyric-subtitle {font-size:90%;text-align:center;line-height:20px;}
+.x-nolyric-desc {font-size:90%;text-align:left;line-height:20px;}
+.gn-icon {width: 22px; height:22px;margin:0px 0px 5px 0px;vertical-align:middle;}
+</style>
+</head>
+
+<body>
+<div class="x-lyric-container">
+<p class="x-nolyric-title">Lyric Not Found</p>
+<p class="x-nolyric-subtitle">
+Using search lyric by web of SDPlayer
+</p>
+<p class="x-nolyric-desc">＜その場合の歌詞の表示方法＞</p>
+<p class="x-nolyric-desc">
+①曲名・アーティスト名が正しいですか？<br/>
+曲情報修正（<img class="gn-icon" src="__EDIT_ICON__" />）を使って正しい曲情報を取得できます。お試しください。
+</p>
+<p class="x-nolyric-desc">
+②歌詞検索（<img class="gn-icon" src="__SEARCH_ICON__" />）からキーワードを減らして検索します
+</p>
+<p class="x-nolyric-desc">該当の歌詞が見つかったら再生中の曲とリンク設定で歌詞を表示できます。</p>
+<p class="x-nolyric-desc">
+③歌詞登録・編集（<img class="gn-icon" src="__EDIT_LYRIC_ICON__" />）から歌詞を登録することが出来ます。
+</p>
+<p class="x-nolyric-desc">※洋楽歌詞は近日対応予定。お楽しみに！</p>
+</div>
+</body>
+</html>

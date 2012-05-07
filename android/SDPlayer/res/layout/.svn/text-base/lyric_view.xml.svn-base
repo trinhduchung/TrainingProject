@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<ScrollView
+	  android:id="@+id/scroll_view_lyric"
+	  android:layout_width="fill_parent"
+	  android:layout_height="fill_parent"
+	  android:scrollbars="none"
+	  android:background="@drawable/alpha_over">
+	  	<WebView
+	  		android:id="@+id/text_view_lyric"
+	  		android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:textSize="16dp"
+			android:padding="10dp"
+			android:background="#00000000">
+		</WebView>
+	</ScrollView>
+	<ProgressBar android:id="@+id/progress_bar_waiting_lyric"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_centerInParent="true"/>
+</RelativeLayout>

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/model
+END
+BaseObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/4/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/model/BaseObject.java
+END
+YoutubeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/17/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/model/YoutubeData.java
+END
+SDAlbumInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/17/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/model/SDAlbumInfo.java
+END
+SDMusic.aidl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/43/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/model/SDMusic.aidl
+END
+SDArtistInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/17/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/model/SDArtistInfo.java
+END
+SDAudio.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/model/SDAudio.java
+END
+SDMusic.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/32/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/model/SDMusic.java
+END
+SDPlaylist.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/48/trunk/%20sdplayer%20--username%20hankorea143/src/gnt/sd/model/SDPlaylist.java
+END
