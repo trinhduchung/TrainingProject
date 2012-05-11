@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+    <ImageView
+        android:id="@+id/menu_header"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/header_edibles"
+        />
+	<TextView
+	    android:layout_marginTop="3dip"
+	    android:layout_marginBottom="3dip"
+	    android:id="@+id/menu_name"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:text="BlueBerry Buds"
+	    android:textColor="#23df32" 
+	    />
+	
+	<LinearLayout
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:background="@drawable/bg_button"
+	     android:layout_gravity="center"
+	     android:orientation="horizontal"
+	     android:layout_marginBottom="5dip"
+	    >
+	    <include
+	        android:layout_marginLeft="4dip"
+	        android:id="@+id/button1"
+	        android:layout_width="45dip"
+	        android:layout_height="wrap_content" 
+	        android:layout_gravity="center_vertical"
+	        layout="@layout/menu_button"
+	        />
+	    <include
+	        android:id="@+id/button2"
+	        android:layout_width="45dip"
+	        android:layout_height="wrap_content" 
+	        android:layout_gravity="center_vertical"
+	        layout="@layout/menu_button_odd"
+	        />
+	    <include
+	        android:id="@+id/button3"
+	        android:layout_width="45dip"
+	        android:layout_height="wrap_content" 
+	        android:layout_gravity="center_vertical"
+	        layout="@layout/menu_button"
+	        />
+	    <include
+	        android:id="@+id/button4"
+	        android:layout_width="45dip"
+	        android:layout_height="wrap_content" 
+	        android:layout_gravity="center_vertical"
+	        layout="@layout/menu_button_odd"
+	        />
+	    <include
+	        android:layout_marginRight="2dip"
+	        android:id="@+id/button5"
+	        android:layout_width="45dip"
+	        android:layout_height="wrap_content" 
+	        android:layout_gravity="center_vertical"
+	        layout="@layout/menu_button"
+	        />
+	</LinearLayout>
+	
+	<ImageView
+	     android:layout_width="fill_parent"
+	     android:layout_height="wrap_content"
+	     android:background="@drawable/divider"
+	    />
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:gravity="center_vertical"
+  android:padding="5px"
+  android:orientation="horizontal">
+  
+  <RelativeLayout android:layout_height="wrap_content"
+  android:layout_width="wrap_content"
+  android:layout_alignParentRight="true"
+  android:id="@+id/leftSub"
+  android:gravity="center_vertical"
+  >
+  <ImageButton 
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:id="@+id/btn_map"
+  android:layout_marginTop="5px"
+  android:background="@layout/btn_map_hover"
+  />
+  <ImageButton 
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:id="@+id/btn_call"
+  android:layout_marginTop="5px"
+  android:background="@layout/btn_call_hover"
+  android:layout_below="@id/btn_map"
+  />
+  </RelativeLayout>
+  
+  <RelativeLayout 
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:layout_toLeftOf="@+id/leftSub"
+  android:gravity="center_vertical"
+  >
+				  <TextView 
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:id="@+id/title"
+				  android:textSize="15px"
+				  android:textColor="#800517"
+				  android:textStyle="bold"/>
+				   <TextView 
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:id="@+id/address"
+				  android:layout_marginTop="2px"
+				  android:text="Address : "
+				  android:textSize="13px"
+				  android:textColor="#437C17"
+				  android:textStyle="bold"
+				  android:layout_below="@id/title"
+				  />
+				   <TextView 
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:layout_below="@id/title"
+				  android:layout_marginTop="2px"
+				  android:layout_toRightOf="@id/address"
+				  android:textSize="13px"
+				  android:lines="2"
+				  android:layout_marginRight="5px"
+				  android:id="@+id/address_value"
+				  android:textColor="#000"/>
+				   <TextView 
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:id="@+id/distance"
+				  android:layout_marginTop="2px"
+				  android:text="Distance :"
+				  android:textSize="13px"
+				  android:textStyle="bold"
+				  android:layout_below="@id/address_value"
+				  android:textColor="#437C17"/>
+				   <TextView 
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:id="@+id/distance_value"
+				  android:layout_marginTop="2px"
+				  android:textSize="13px"
+				  android:layout_toRightOf="@id/distance"
+				  android:layout_below="@id/address_value"
+				  android:textColor="#000"/>
+				  
+				  <TextView 
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:id="@+id/phone"
+				  android:text="Phone :"
+				  android:textSize="13px"
+				  android:textStyle="bold"
+				  android:layout_marginTop="2px"
+				  android:layout_below="@id/distance"
+				  android:textColor="#437C17"/>
+				  
+				  <TextView 
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:id="@+id/phone_value"
+				  android:layout_marginTop="2px"
+				  android:textSize="13px"
+				  android:layout_toRightOf="@id/phone"
+				  android:layout_below="@id/distance"
+				  android:textColor="#000"/>
+  </RelativeLayout>
+</RelativeLayout>

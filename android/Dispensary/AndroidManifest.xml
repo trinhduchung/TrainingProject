@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.hiddenbrains.dispensary.screen" android:versionCode="1"
+	android:versionName="1.0">
+	<uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+
+	<application android:icon="@drawable/icon" android:label="@string/app_name"
+		android:debuggable="true" android:theme="@android:style/Theme.NoTitleBar">
+		<activity android:name=".LoadingScreen" android:label="@string/app_name"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".DispensaryListScreen" android:label="DispensaryListScreen"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+		</activity>
+		<activity android:name=".Dispansary_Detail" android:label="DispensaryListScreen" 
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+		<activity android:name=".MapScreen" android:label="CARRIER"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+			
+		<activity android:name=".MapScreenAll" android:label="CARRIER"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+
+		<activity android:name=".ReviewScreen"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+
+		<activity android:name=".ReviewDetail"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+
+		<activity android:name=".SearchScreen"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+
+
+		<activity android:name=".SearchFromClinicList"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+
+		<activity android:name=".MapRoute" android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar" />
+		
+		<activity android:name="com.hiddenbrains.dispensary.MapRoute.MapRouteActivity" android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar" />
+		
+		<activity android:name=".Doctors_Clinic_List"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+
+		<activity android:name="From_Main_Search"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+		<activity android:name="com.hiddenbrains.dispensary.MapRoute.WhereAreMyFriendsMap"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
+		
+		<activity android:name=".MenuScreen"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		
+		<uses-library android:name="com.google.android.maps" />
+	</application>
+	<uses-sdk android:minSdkVersion="4" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	<uses-permission android:name="android.permission.WRITE_CONTACTS" />
+	<uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+</manifest> 

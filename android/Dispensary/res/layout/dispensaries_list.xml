@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/d_relative_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/d_linear_layout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header" 
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:paddingTop="10px"
+            android:text="Dispensaries List"
+            android:textColor="#FDD017"
+            android:textSize="16px"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="4px"
+            android:background="@layout/btn_refresh"
+            android:paddingTop="5px" />
+
+        <ImageButton
+            android:id="@+id/d_btn_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10px"
+            android:layout_marginTop="4px"
+            android:background="@layout/btn_map_hover" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bodyWrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/body" 
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/d_linear_layout1">
+        
+    <ListView
+        android:id="@+id/d_list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dip"
+        android:layout_marginLeft="8px"
+        android:layout_marginRight="8px"
+        android:layout_marginTop="18px"
+        android:cacheColorHint="#00000000"
+        android:fadingEdge="none" 
+        android:background="@drawable/roundedcorner"
+        android:paddingBottom="4dip"
+        android:paddingTop="4dip"
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip"/>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_bar" />
+
+    <ImageButton
+        android:id="@+id/d_btn_dispansary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10px"
+        android:background="@layout/btn_dispensaries" />
+
+    <ImageButton
+        android:id="@+id/d_btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@layout/btn_search_main" />
+
+    <ImageButton
+        android:id="@+id/d_btn_doctors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10px"
+        android:background="@layout/btn_doctors" />
+    
+  </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/d_relative_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/linear_layout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header"
+        android:paddingTop="1px" >
+
+        <ImageButton
+            android:id="@+id/d_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10px"
+            android:layout_marginTop="4px"
+            android:background="@layout/btn_back_hover" />
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="30px"
+            android:layout_marginTop="5px"
+            android:layout_toRightOf="@id/d_btn_back"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="Review Details"
+            android:textColor="#FDD017"
+            android:textSize="16px"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bodyWrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/linear_layout1"
+        android:background="@drawable/body" >
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="65dip"
+            android:layout_marginTop="18px"
+            android:layout_marginLeft="8px"
+        	android:layout_marginRight="8px"
+            android:fadingEdge="none" 
+            android:background="@drawable/roundedcorner"
+            android:paddingBottom="5dip"
+	        android:paddingTop="5dip"
+	        android:paddingLeft="2dip"
+	        android:paddingRight="2dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0px"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4px"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/subtitle"
+                        android:layout_width="150px"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10px"
+                        android:layout_marginTop="10px"
+                        android:lines="1"
+                        android:textColor="#800517"
+                        android:textSize="15px"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginTop="12px"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/dl_textview1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reviewed By : "
+                        android:textColor="#617C58"
+                        android:textSize="13px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dl_reviewby_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#717D7D"
+                        android:textSize="12px" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginTop="6px"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/dl_textview1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Posted Date :"
+                        android:textColor="#617C58"
+                        android:textSize="13px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dl_posted_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#717D7D"
+                        android:textSize="12px" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:paddingTop="5px" >
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="100px"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9px"
+                        android:text="Overall rating : "
+                        android:textColor="#617C58"
+                        android:textSize="13px"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/overall_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9px"
+                        android:layout_toRightOf="@id/rating" />
+
+                    <TextView
+                        android:id="@+id/qua"
+                        android:layout_width="100px"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rating"
+                        android:layout_marginTop="9px"
+                        android:text="Med Quality:  "
+                        android:textColor="#617C58"
+                        android:textSize="13px"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/qua_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rating"
+                        android:layout_marginTop="9px"
+                        android:layout_toRightOf="@id/qua" />
+
+                    <TextView
+                        android:id="@+id/loc"
+                        android:layout_width="100px"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/qua"
+                        android:layout_marginTop="9px"
+                        android:text="Location: "
+                        android:textColor="#617C58"
+                        android:textSize="13px"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/loc_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/qua"
+                        android:layout_marginTop="9px"
+                        android:layout_toRightOf="@id/loc" />
+
+                    <TextView
+                        android:id="@+id/bat"
+                        android:layout_width="100px"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/loc"
+                        android:layout_marginTop="9px"
+                        android:text="BudTenders: "
+                        android:textColor="#617C58"
+                        android:textSize="13px"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/bat_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/loc"
+                        android:layout_marginTop="9px"
+                        android:layout_toRightOf="@id/bat" />
+
+                    <TextView
+                        android:id="@+id/know"
+                        android:layout_width="100px"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/bat"
+                        android:layout_marginTop="9px"
+                        android:text="Knowledge : "
+                        android:textColor="#617C58"
+                        android:textSize="13px"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/know_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/bat"
+                        android:layout_marginTop="9px"
+                        android:layout_toRightOf="@id/know" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="100px"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/know"
+                        android:layout_marginTop="9px"
+                        android:text="Price : "
+                        android:textColor="#617C58"
+                        android:textSize="13px"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/price_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/know"
+                        android:layout_marginTop="9px"
+                        android:layout_toRightOf="@id/price" />
+
+                    <TextView
+                        android:id="@+id/des"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/price"
+                        android:layout_marginTop="9px"
+                        android:text="Description: "
+                        android:textColor="#617C58"
+                        android:textSize="13px"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginRight="10px" >
+
+                    <TextView
+                        android:id="@+id/des_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/price"
+                        android:layout_marginTop="9px"
+                        android:layout_toRightOf="@id/des"
+                        android:textColor="#717D7D"
+                        android:textSize="12px" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <!-- Bottom Bar -->
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom_bar" />
+
+        <ImageButton
+            android:id="@+id/d_btn_dispansary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10px"
+            android:background="@layout/btn_dispensaries" />
+
+        <ImageButton
+            android:id="@+id/d_btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@layout/btn_search_main" />
+
+        <ImageButton
+            android:id="@+id/d_btn_doctors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10px"
+            android:background="@layout/btn_doctors" />
+    </RelativeLayout>
+
+</RelativeLayout>

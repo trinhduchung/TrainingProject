@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  
+	android:layout_width="45dip" 
+	android:id="@+id/menu_button_root_layout"
+	android:layout_height="wrap_content"
+	android:background="@drawable/btn_2" 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+		<Button
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerInParent="true"
+		    android:background="@android:color/transparent"
+		    android:text="$20"
+		    android:textSize="13dip"
+		    android:id="@+id/menu_button_price"
+		    android:textColor="@android:color/black" 
+		    />
+		<ImageView
+		    android:id="@+id/menu_type_icon"
+		     android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/icon_12"
+		    android:layout_alignParentRight="true"
+		    android:layout_marginLeft="3dip"
+		    android:layout_marginTop="3dip"
+		    />
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+ 	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:orientation="horizontal"
+  	android:background="@drawable/strip">
+   	
+   	<LinearLayout
+ 		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:orientation="vertical"
+  		android:layout_marginLeft="4px"
+  		android:layout_marginTop="0px"
+  		>
+ 			<TextView
+ 				android:layout_width="150px" 
+ 				android:lines="1"
+			    android:layout_height="wrap_content"
+ 				 android:textSize="15px"
+ 				android:textColor="#800517"
+ 				android:textStyle="bold"
+ 				android:id="@+id/dl_textview1"/>
+			 <LinearLayout
+ 				android:layout_width="fill_parent"
+ 			    android:layout_height="wrap_content"
+ 			    android:orientation="horizontal"
+ 			    android:layout_marginTop="4px"
+ 			    >
+					 <TextView
+					 	android:layout_width="wrap_content" 
+					 	android:layout_height="wrap_content"
+						android:text="Reviewed By: "
+					 	android:textSize="12px"
+						android:textColor="#437C17"
+					 	android:textStyle="bold"
+					 	android:id="@+id/dl_textview1"/> 
+					 <TextView
+						 android:layout_width="wrap_content" 
+						 android:layout_height="wrap_content"
+						 android:text="12 ca America"
+						 android:textColor="#717D7D"
+						 android:textSize="12px"
+						 android:id="@+id/dl_reviewby_data"/> 		
+			</LinearLayout>  
+			 <LinearLayout
+	 			android:layout_width="fill_parent"
+	  			android:layout_height="wrap_content"
+	  			android:orientation="horizontal"
+	  			android:layout_marginTop="4px">
+					 <TextView
+					 android:layout_width="wrap_content" 
+					 android:layout_height="wrap_content"
+					 android:text="Posted Date: "
+					 android:textSize="12px"
+					 android:textColor="#437C17"
+					 android:textStyle="bold"
+					 android:id="@+id/dl_textview3"/> 
+					 <TextView
+					 android:layout_width="wrap_content" 
+					 android:layout_height="wrap_content"
+					 android:text="12 ca America"
+					android:textColor="#717D7D"
+					android:textSize="12px"
+					 android:id="@+id/dl_posted_data"/> 
+			</LinearLayout>  
+			<LinearLayout
+	 			android:layout_width="fill_parent"
+	  			android:layout_height="wrap_content"
+	  			android:orientation="horizontal"
+	  			android:layout_marginTop="4px">
+					 <TextView
+					 android:layout_width="wrap_content" 
+					 android:layout_height="wrap_content"
+					 android:text="Overall Rating: "
+					 android:textSize="12px"
+					 android:textColor="#437C17"
+					 android:textStyle="bold"
+					 android:id="@+id/dl_textview3"/> 
+					 <ImageView
+					 android:layout_width="wrap_content" 
+					 android:layout_height="wrap_content"
+					 android:background="@drawable/rating_3"
+					 android:id="@+id/dl_posted_data11"/> 
+			</LinearLayout>  
+	 </LinearLayout> 
+</LinearLayout>

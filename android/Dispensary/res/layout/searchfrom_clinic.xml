@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/d_relative_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="3px" >
+
+    <RelativeLayout
+        android:id="@+id/d_linear_layout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header"
+        android:paddingTop="1px" >
+
+        <ImageButton
+            android:id="@+id/s_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4px"
+            android:background="@layout/btn_back_hover" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5px"
+            android:text="Search"
+            android:textColor="#FDD017"
+            android:textSize="16px"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bodyWrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/d_linear_layout1"
+        android:background="@drawable/body" >
+
+        <TextView
+            android:id="@+id/s_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="2dip"
+            android:text="Search clinic by"
+            android:textColor="#800517"
+            android:textSize="15px"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/searchWrapper"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/s_title"
+            android:layout_marginBottom="65dip"
+            android:layout_marginLeft="8px"
+            android:layout_marginRight="8px"
+            android:layout_marginTop="18px"
+            android:background="@drawable/roundedcorner" >
+
+            <EditText
+                android:id="@+id/enter_Clinic_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/s_title"
+                android:layout_margin="20px"
+                android:gravity="center_vertical"
+                android:hint="Enter City name"
+                android:textSize="15px" />
+
+            <ImageButton
+                android:id="@+id/btn_search_by_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/enter_Clinic_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10px"
+                android:background="@layout/btn_search_hover" />
+        </RelativeLayout>
+        <!-- Bottom Bar            //////////// -->
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom_bar" />
+
+        <ImageButton
+            android:id="@+id/d_btn_dispansary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10px"
+            android:background="@layout/btn_dispensaries" />
+
+        <ImageButton
+            android:id="@+id/d_btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@layout/btn_search_main" />
+
+        <ImageButton
+            android:id="@+id/d_btn_doctors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10px"
+            android:background="@layout/btn_doctors" />
+    </RelativeLayout>
+
+</RelativeLayout>
