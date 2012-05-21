@@ -39,6 +39,7 @@ public class LazyAdapterMainList extends BaseAdapter{
 			address=new ArrayList<String>();
 			icon_image=new ArrayList<String>();
 	        title = name;
+	        Log.e("adapter", (title.get(0).toString()));
 	        distance=dis1;
 	        image_rating=image;
 	        address=address1;
@@ -88,11 +89,11 @@ public class LazyAdapterMainList extends BaseAdapter{
 
 			try
 			{
-				if(convertView==null)
-				{
+				//if(convertView==null)
+				//{
 					try
 					{
-						v =inflater.inflate(R.layout.dispansary_list_view_main,null);
+						v = inflater.inflate(R.layout.dispansary_list_view_main,null);
 					}
 					catch(Exception e)
 					{
@@ -122,11 +123,11 @@ public class LazyAdapterMainList extends BaseAdapter{
 					
 					v.setTag(holder);
 					
-				}
-				else
-				{   
+				//}
+				//else
+				//{   
 					 holder=(ViewHolder)v.getTag();
-				}
+				//}
 				if(image_rating.get(position).toString().equals("(0)"))
 				{
 					   holder.img2.setImageResource(R.drawable.rating_0);	
@@ -142,7 +143,7 @@ public class LazyAdapterMainList extends BaseAdapter{
 					   holder.img2.setImageResource(R.drawable.rating_5);	
 					}	
 				else{
-						holder.img2.setImageResource(R.drawable.rating_0);	
+						holder.img2.setImageResource(R.drawable.rating_5);	
 					}
 				if(title.get(position).toString().equals(""))
 				{
@@ -150,6 +151,7 @@ public class LazyAdapterMainList extends BaseAdapter{
 				}
 				else
 				{
+					
 					holder.title_txt.setText((title.get(position).toString()));
 					
 				}

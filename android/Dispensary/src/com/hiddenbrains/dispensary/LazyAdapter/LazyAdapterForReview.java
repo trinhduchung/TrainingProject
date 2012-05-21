@@ -65,7 +65,7 @@ public class LazyAdapterForReview  extends BaseAdapter{
 				View v=convertView;
 				ViewHolder holder;
 				
-				if(convertView==null){
+				//if(convertView==null){
 					v =inflater.inflate(R.layout.inflatefilereview,null);
 					holder=new ViewHolder();
 					holder.title=(TextView) v.findViewById(R.id.dl_textview1);
@@ -73,11 +73,11 @@ public class LazyAdapterForReview  extends BaseAdapter{
 					holder.posted=(TextView)v.findViewById(R.id.dl_posted_data);
 					holder.img2=(ImageView)v.findViewById(R.id.dl_posted_data11);
 					v.setTag(holder);
-				 }
-				
-				else{   
+				// }
+				//
+				//else{   
 					 holder=(ViewHolder)v.getTag();
-				}
+				//}
 				
 				holder.title.setText(title.get(position).toString());
 				holder.reviewBy.setText((reviewby.get(position).toString()));

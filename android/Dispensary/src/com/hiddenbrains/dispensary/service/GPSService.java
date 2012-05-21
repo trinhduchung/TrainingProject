@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Timer;
 
+import com.hiddenbrains.dispensary.screen.LoadingScreen;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -116,7 +118,7 @@ public class GPSService {
 
 		@Override
 		public void onLocationChanged(Location loc) {
-			System.out.println("on location changed");
+			
 			if (loc != null) {
 				_gpsInfo = new GPSInfo();
 				_gpsInfo.setLat(loc.getLatitude());
@@ -137,6 +139,7 @@ public class GPSService {
 					e.printStackTrace();
 				}
 				_listener.onGetGPSSuccess(_gpsInfo);
+				System.out.println("on location changed : " + _gpsInfo.getInfo());
 			} else {
 				_locManager.removeUpdates(this);
 				_listener.onGetGPSFail();
@@ -173,7 +176,7 @@ public class GPSService {
 					public void onClick(DialogInterface dialog, int id) {
 						Intent callGPSSettingIntent = new Intent(
 								android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-						_context.startActivity(callGPSSettingIntent);
+						((Activity)_context).startActivityForResult(callGPSSettingIntent, LoadingScreen.GPS_CODE);
 					}
 				});
 		alertDialogBuilder.setNegativeButton("Cancel",

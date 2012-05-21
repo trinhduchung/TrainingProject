@@ -75,7 +75,7 @@ public class LazyAdapterForClinicList extends BaseAdapter implements OnClickList
 			View v=convertView;
 			ViewHolder holder;
 			
-			if(convertView==null){
+			//if(convertView==null){
 				try{
 				v =inflater.inflate(R.layout.inflatefile_for_clinic,null);
 				}
@@ -100,11 +100,11 @@ public class LazyAdapterForClinicList extends BaseAdapter implements OnClickList
 					
 					v.setTag(holder);
 				
-			}
-			else
-			{   
+			//}
+			//else
+			//{   
 				 holder=(ViewHolder)v.getTag();
-			}
+			//}
 			
 		
 			holder.title.setText((title.get(position).toString()));

@@ -12,15 +12,30 @@ import com.hiddenbrains.dispensary.service.GPSService.GPSServiceListener;
 
 public class LoadingScreen extends Activity implements GPSServiceListener{
 	
-	
+	public static final int GPS_CODE = 0x01;
+	private GPSService gpsService;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loadingscreen);
-        GPSService gpsService = new GPSService(this, this);
+        gpsService = new GPSService(this, this);
         gpsService.getCurrentLocation();
     } 
+    
+    
+    
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		if (requestCode == GPS_CODE) {
+			gpsService.getCurrentLocation();
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+
+
 	@Override
 	public void onGetGPSSuccess(GPSInfo gpsInfo) {
 		gpsInfo.toString();

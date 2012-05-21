@@ -78,7 +78,7 @@ public class LazyAdapterDoctorClinic extends BaseAdapter{
 			View v=convertView;
 			ViewHolder holder;
 			
-			if(convertView==null){
+			//if(convertView==null){
 				try{
 				v =inflater.inflate(R.layout.doctor_clinic_list_row,null);
 				}
@@ -100,11 +100,11 @@ public class LazyAdapterDoctorClinic extends BaseAdapter{
 					
 					v.setTag(holder);
 				
-			}
-			else
-			{   
+			//}
+			//else
+			//{   
 				 holder=(ViewHolder)v.getTag();
-			}
+			//}
 			holder.title.setText((title.get(position).toString()));
 			holder.address.setText(address.get(position).toString());
 			holder.distance.setText(distance.get(position).toString());
