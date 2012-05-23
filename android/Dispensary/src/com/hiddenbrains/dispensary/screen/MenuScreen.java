@@ -53,8 +53,8 @@ public class MenuScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu_screen);
 		mListMenu = (ListView) findViewById(R.id.list_menu);
-
-		new FeetMenuTask().execute("http://www.thcfinder.com/menu.php?dispid=1000");
+		String id = getIntent().getStringExtra("id");
+		new FeetMenuTask().execute("http://www.thcfinder.com/menu.php?dispid=" + id);
 	}
 	
 	public class FeetMenuTask extends AsyncTask<String, Void, Void> {
@@ -69,6 +69,7 @@ public class MenuScreen extends Activity {
 				});
 				
 				String url = urls[0];
+				System.out.println(url);
 				final DefaultHttpClient client = new DefaultHttpClient();
 				HttpParams params = client.getParams();
 				HttpConnectionParams.setConnectionTimeout(params, 20000);
@@ -85,7 +86,9 @@ public class MenuScreen extends Activity {
 				while ((line = r.readLine()) != null) {
 				    total.append(line);
 				}
-				System.out.println(total.toString());
+
+				String str = total.toString();
+				str = str.replaceAll("&", " and ");
 				File sdCard = Environment.getExternalStorageDirectory();
 				File dir = new File (sdCard.getAbsolutePath() + "/dir1/dir2");
 				dir.mkdirs();
@@ -93,7 +96,7 @@ public class MenuScreen extends Activity {
 				FileWriter writer = new FileWriter(file);
 				writer.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
 				writer.append("<root>");
-		        writer.append(total.toString());
+		        writer.append(str.toString());
 		        writer.append("</root>");
 		        writer.flush();
 		        writer.close();
@@ -236,13 +239,17 @@ public class MenuScreen extends Activity {
 			viewHolder.button82.setText(dolar + item.priceOZ);
 			
 			if (item.type.equals("Hybrid")) {
-				viewHolder.header.setBackgroundResource(R.drawable.header_hybrid);
+				viewHolder.header.setBackgroundResource(R.drawable.header_hi);
 			} else if (item.type.equals("Indica")) {
-				viewHolder.header.setBackgroundResource(R.drawable.header_indicia);
+				viewHolder.header.setBackgroundResource(R.drawable.header_in);
 			} else if (item.type.equals("Sativa")) {
-				viewHolder.header.setBackgroundResource(R.drawable.header_satvia);
-			} else {
-				viewHolder.header.setBackgroundResource(R.drawable.header_edibles);
+				viewHolder.header.setBackgroundResource(R.drawable.header_sa);
+			} else if (item.type.equals("Merchandise")) {
+				viewHolder.header.setBackgroundResource(R.drawable.header_merchandise);
+			} else if (item.type.equals("Edibles")) {
+				viewHolder.header.setBackgroundResource(R.drawable.header_edi);
+			} else if (item.type.equals("Concentrates")) {
+				viewHolder.header.setBackgroundResource(R.drawable.header_concentrates);
 			}
 			
 			return rowView;

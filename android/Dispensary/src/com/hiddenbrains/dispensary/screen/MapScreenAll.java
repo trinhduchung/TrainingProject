@@ -82,6 +82,7 @@ public class MapScreenAll extends MapActivity {
 				}
 
 	        	overlayLayout = new MyItemizedOverlay(image, mapview);
+	        	overlayLayout.setContext(this);
 		        overlayLayout.addOverlay(overlayItem[i]);
 		        mapOverlay.add(overlayLayout);
 	        }

@@ -178,7 +178,7 @@ public class From_Main_Search extends Activity implements OnClickListener,
 				if (!state_name.equals("")) {
 					str = str + "&keyword=" + state_name1;
 				}
-				Log.e("ee", "url = " + str);
+
 				URL url = new URL(str);
 				URLConnection urlc = url.openConnection();
 				BufferedReader bfr = new BufferedReader(new InputStreamReader(

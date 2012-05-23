@@ -70,6 +70,7 @@ public class Dispansary_Detail extends Activity implements android.view.View.OnC
 	private String phone_no;
 	
 	String dis_id;
+	private String mDispensaryId;
 	private String marker;
 	private File cacheDir;
 	private String strurl="http://www.thcfinder.com/disp/";
@@ -333,7 +334,9 @@ public class Dispansary_Detail extends Activity implements android.view.View.OnC
 			
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(Dispansary_Detail.this, MenuScreen.class));
+				Intent intent = new Intent(Dispansary_Detail.this, MenuScreen.class);
+				intent.putExtra("id", mDispensaryId);
+				startActivity(intent);
 			}
 		});
 		
@@ -401,6 +404,7 @@ public class Dispansary_Detail extends Activity implements android.view.View.OnC
 	 	   	 	 	    		}catch(Exception e){
 	 	   	 	 	        		e.getMessage();
 	 	   	 	 	        	}
+	 	   	 	 	    		mDispensaryId = jo.getString("dispensary_id");
 	 	   	 	 	    		data.addElement(jo.getString("dispensary_name"));//2
 	 	   	 	 	    		data.addElement(jo.getString("address"));//3
 	 	   	 	 	    		data.addElement(jo.getString("phone"));//4

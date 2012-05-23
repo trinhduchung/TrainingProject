@@ -39,7 +39,6 @@ public class LazyAdapterMainList extends BaseAdapter{
 			address=new ArrayList<String>();
 			icon_image=new ArrayList<String>();
 	        title = name;
-	        Log.e("adapter", (title.get(0).toString()));
 	        distance=dis1;
 	        image_rating=image;
 	        address=address1;
@@ -210,7 +209,6 @@ public class LazyAdapterMainList extends BaseAdapter{
 				} 
 				else
 				{
-						Log.e("imge_missing", icon_image.get(position).toString());
 						holder.iconimage.setImageResource(R.drawable.green_leaf);	
 				}
 				
