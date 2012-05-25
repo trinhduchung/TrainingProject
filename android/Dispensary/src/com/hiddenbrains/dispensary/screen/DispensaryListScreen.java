@@ -219,7 +219,7 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 					builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
 						
 						public void onClick(DialogInterface dialog, int which) {
-							finish();
+							moveTaskToBack(true);
 						}
 					});
 					handler1.sendEmptyMessage(0);
@@ -256,7 +256,7 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 					builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
 						
 						public void onClick(DialogInterface dialog, int which) {
-							finish();
+							moveTaskToBack(true);
 						}
 					});
 					builder.show();

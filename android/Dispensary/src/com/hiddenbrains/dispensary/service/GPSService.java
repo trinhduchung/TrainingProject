@@ -183,6 +183,7 @@ public class GPSService {
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
 						dialog.cancel();
+						_listener.onGetGPSFail();
 					}
 				});
 		AlertDialog alert = alertDialogBuilder.create();
