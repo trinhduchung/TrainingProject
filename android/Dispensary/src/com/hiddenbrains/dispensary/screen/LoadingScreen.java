@@ -13,7 +13,10 @@ import com.hiddenbrains.dispensary.service.GPSService.GPSServiceListener;
 public class LoadingScreen extends Activity implements GPSServiceListener{
 	
 	public static final int GPS_CODE = 0x01;
+	public static final int MAIN_CODE = 0x02;
+	
 	private GPSService gpsService;
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,8 +33,9 @@ public class LoadingScreen extends Activity implements GPSServiceListener{
 		// TODO Auto-generated method stub
 		if (requestCode == GPS_CODE) {
 			gpsService.getCurrentLocation();
+		} else if (requestCode == MAIN_CODE) {
+			finish();
 		}
-		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 
@@ -44,7 +48,7 @@ public class LoadingScreen extends Activity implements GPSServiceListener{
 		DispensaryConstant.longitude = gpsInfo.getLng()+"";
 		
 		Intent i = new Intent(LoadingScreen.this,DispensaryListScreen.class);
-		startActivity(i);
+		startActivityForResult(i, MAIN_CODE);
 	}
 	@Override
 	public void onGetGPSFail() {
@@ -52,6 +56,6 @@ public class LoadingScreen extends Activity implements GPSServiceListener{
 		DispensaryConstant.longitude = "-119.443359";
 		
 		Intent i = new Intent(LoadingScreen.this,DispensaryListScreen.class);
-		startActivity(i);
+		startActivityForResult(i, MAIN_CODE);
 	}
 }

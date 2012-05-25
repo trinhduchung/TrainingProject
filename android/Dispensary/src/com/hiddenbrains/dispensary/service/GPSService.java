@@ -40,6 +40,10 @@ public class GPSService {
 	}
 	
 	public void getCurrentLocation() {
+		
+		Message msg = _handler.obtainMessage(2);
+		_handler.sendMessageDelayed(msg, 8000);
+		
 		String provider = Settings.Secure.getString(_context.getContentResolver(),Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
 		if (provider == null || provider.equalsIgnoreCase("")) {
 			showError();
@@ -72,6 +76,8 @@ public class GPSService {
 				
 				Message message = _handler.obtainMessage(1);
 				_handler.sendMessageDelayed(message, 3000);
+			} else {
+				_listener.onGetGPSFail();
 			}
 		}
 	}
@@ -102,6 +108,15 @@ public class GPSService {
 					getByNetworkProvider();
 				} else if (msg.what == 1) {
 					_locManager.removeUpdates(_networkLocListener);
+					_listener.onGetGPSFail();
+				} else if (msg.what == 2) {
+					System.out.println("here");
+					if (_locListener != null) {
+						_locManager.removeUpdates(_locListener);
+					}
+					if (_networkLocListener != null) {
+						_locManager.removeUpdates(_networkLocListener);
+					}
 					_listener.onGetGPSFail();
 				}
 			}

@@ -219,7 +219,7 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 					builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
 						
 						public void onClick(DialogInterface dialog, int which) {
-							moveTaskToBack(true);
+							finish();
 						}
 					});
 					handler1.sendEmptyMessage(0);
@@ -256,7 +256,7 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 					builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
 						
 						public void onClick(DialogInterface dialog, int which) {
-							moveTaskToBack(true);
+							finish();
 						}
 					});
 					builder.show();
@@ -295,14 +295,6 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 			e.getMessage();
 			return false;
 		}
-	}
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		// TODO Auto-generated method stub
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			moveTaskToBack(true);
-		}
-		return super.onKeyDown(keyCode, event);
 	}
 	
 }
