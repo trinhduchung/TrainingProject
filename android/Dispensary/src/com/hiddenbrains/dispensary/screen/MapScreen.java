@@ -69,6 +69,7 @@ public class MapScreen extends MapActivity{
 					image = getResources().getDrawable(R.drawable.green_leaf);	
 				}
 				overlayLayout = new MyItemizedOverlay(image, mapView);
+				overlayLayout.setContext(this);
 				if(lat.equals("0")||lont.equals("0"))
 				{
 					Builder builder = new AlertDialog.Builder(MapScreen.this);

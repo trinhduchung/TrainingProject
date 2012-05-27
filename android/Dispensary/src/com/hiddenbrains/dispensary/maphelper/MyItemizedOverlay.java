@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.widget.Toast;
 
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
@@ -39,7 +38,9 @@ public class MyItemizedOverlay extends ShowBalloonItem<OverlayItem>{
 	@Override
 	protected boolean onBalloonTap(int index) {
 		System.out.println("ballon tap");
-		((Activity) mContext ).finish();
+		if (mContext != null) {
+			((Activity) mContext ).finish();
+		} 
 		return true;
 	}
 	
