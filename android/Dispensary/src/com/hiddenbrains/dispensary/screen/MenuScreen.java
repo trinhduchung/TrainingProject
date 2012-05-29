@@ -319,14 +319,18 @@ public class MenuScreen extends Activity {
 			
 			View v1 = v.findViewById(R.id.button1);
 			buttonG = (Button)v1.findViewById(R.id.menu_button_price);
-			((ImageView)v1.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_g);
+			
 			if (itemType.equals("Edibles") || itemType.equals("Merchandise") || itemType.equals("Clones") || itemType.equals("Seeds")) {
-				
+				((ImageView)v1.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.ea);
 			} else {
+				((ImageView)v1.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_g);
 				View v2 = v.findViewById(R.id.button2);
 				button8 = (Button)v2.findViewById(R.id.menu_button_price);
 				((ImageView)v2.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_18);
-				if (!itemType.equals("Concentrates")) {
+				if (itemType.equals("Concentrates")) {
+					((ImageView)v1.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.g_12);
+					((ImageView)v2.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_g);
+				} else {
 					View v3 = v.findViewById(R.id.button3);
 					button4 = (Button)v3.findViewById(R.id.menu_button_price);
 					((ImageView)v3.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_14);
@@ -337,7 +341,7 @@ public class MenuScreen extends Activity {
 					
 					View v5 = v.findViewById(R.id.button5);
 					button82 = (Button)v5.findViewById(R.id.menu_button_price);
-					((ImageView)v5.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_18);
+					((ImageView)v5.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.oz);
 				}
 			}
 		}

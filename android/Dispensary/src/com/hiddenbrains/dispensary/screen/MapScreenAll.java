@@ -90,6 +90,8 @@ public class MapScreenAll extends MapActivity {
 	        final MapController mc = mapview.getController();
 	        mc.animateTo(points[0]);
 	        mc.setZoom(8);
+	        mapview.setStreetView(true);
+	        mapview.setSatellite(false);
 		}
 		catch(Exception e)
 		{

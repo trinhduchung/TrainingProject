@@ -46,7 +46,7 @@ public class LoadingScreen extends Activity implements GPSServiceListener{
 		
 		DispensaryConstant.latitude = gpsInfo.getLat()+"";
 		DispensaryConstant.longitude = gpsInfo.getLng()+"";
-		
+
 		Intent i = new Intent(LoadingScreen.this,DispensaryListScreen.class);
 		startActivityForResult(i, MAIN_CODE);
 	}
