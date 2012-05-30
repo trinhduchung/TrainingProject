@@ -160,6 +160,7 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 			String[] arrStr = position.split(",");
 			if (arrStr.length >= 2) {
 				str = DispensaryConstant.DISPENSARY_LIST+"latitude="+arrStr[0].trim()+"&longitude="+arrStr[1].trim();
+				System.out.println(str);
 			}
 		}
 			    WifiManager wifimanger=(WifiManager) this.getSystemService(Context.WIFI_SERVICE);

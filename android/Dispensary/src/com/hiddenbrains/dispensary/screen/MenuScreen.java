@@ -238,7 +238,10 @@ public class MenuScreen extends Activity {
 				
 			} else {
 				viewHolder.button8.setText(dolar + item.price8);
-				if (!item.type.equals("Concentrates")) {
+				if (item.type.equals("Concentrates")) {
+					viewHolder.buttonG.setText(dolar + item.price8);
+					viewHolder.button8.setText(dolar + item.priceG);
+				} else {
 					viewHolder.button4.setText(dolar + item.price4);
 					viewHolder.button2.setText(dolar + item.price2);
 					viewHolder.button82.setText(dolar + item.priceOZ);
