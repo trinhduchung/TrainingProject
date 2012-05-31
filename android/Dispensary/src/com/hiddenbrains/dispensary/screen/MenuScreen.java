@@ -222,34 +222,45 @@ public class MenuScreen extends Activity {
 		public View getView(int position, View convertView, ViewGroup parent) {
 			RowViewHolder viewHolder;
 			View rowView = convertView;
+			MenuItem item = getItem(position);
 			//if (rowView == null) {
-				rowView = getViewForType(getItemViewType(position));
-				viewHolder = new RowViewHolder(rowView);
-				rowView.setTag(viewHolder);
+			rowView = getViewForType(getItemViewType(position), item.type);
+			viewHolder = new RowViewHolder(rowView, item.type);
+			rowView.setTag(viewHolder);
 			//}
 			
 			viewHolder = (RowViewHolder) rowView.getTag();
-			MenuItem item = getItem(position);
+			
 			String dolar = "$";
 			viewHolder.name.setText(item.name);
 			viewHolder.buttonG.setText(dolar + item.priceG);
-			viewHolder.button8.setText(dolar + item.price8);
-			viewHolder.button4.setText(dolar + item.price4);
-			viewHolder.button2.setText(dolar + item.price2);
-			viewHolder.button82.setText(dolar + item.priceOZ);
-			
+			if (item.type.equals("Edibles") || item.type.equals("Merchandise") || item.type.equals("Clones") || item.type.equals("Seeds")) {
+				
+			} else {
+				viewHolder.button8.setText(dolar + item.price8);
+				if (item.type.equals("Concentrates")) {
+					viewHolder.buttonG.setText(dolar + item.price8);
+					viewHolder.button8.setText(dolar + item.priceG);
+				} else {
+					viewHolder.button4.setText(dolar + item.price4);
+					viewHolder.button2.setText(dolar + item.price2);
+					viewHolder.button82.setText(dolar + item.priceOZ);
+				}
+			}
 			if (item.type.equals("Hybrid")) {
-				viewHolder.header.setBackgroundResource(R.drawable.header_hi);
+				viewHolder.header.setBackgroundResource(R.drawable.header_hybrid);
 			} else if (item.type.equals("Indica")) {
-				viewHolder.header.setBackgroundResource(R.drawable.header_in);
+				viewHolder.header.setBackgroundResource(R.drawable.header_indicia);
 			} else if (item.type.equals("Sativa")) {
-				viewHolder.header.setBackgroundResource(R.drawable.header_sa);
+				viewHolder.header.setBackgroundResource(R.drawable.header_satvia);
 			} else if (item.type.equals("Merchandise")) {
 				viewHolder.header.setBackgroundResource(R.drawable.header_merchandise);
 			} else if (item.type.equals("Edibles")) {
-				viewHolder.header.setBackgroundResource(R.drawable.header_edi);
+				viewHolder.header.setBackgroundResource(R.drawable.header_edibles);
 			} else if (item.type.equals("Concentrates")) {
 				viewHolder.header.setBackgroundResource(R.drawable.header_concentrates);
+			} else if (item.type.equals("Clones")) {
+				viewHolder.header.setBackgroundResource(R.drawable.header_clones);
 			}
 			
 			return rowView;
@@ -263,8 +274,13 @@ public class MenuScreen extends Activity {
 			return TYPE_NORMAL;
 		}
 		
-		private View getViewForType(int type) {
-			View v = LayoutInflater.from(mContext).inflate(R.layout.list_menu_row_view, null);
+		private View getViewForType(int type, String itemType) {
+			View v = LayoutInflater.from(mContext).inflate(R.layout.list_menu_row_view, null);;//edibles, merchandise, clones and seeds
+			if (itemType.equals("Edibles") || itemType.equals("Merchandise") || itemType.equals("Clones") || itemType.equals("Seeds")) {
+				v = LayoutInflater.from(mContext).inflate(R.layout.list_menu_row_view_one_item, null);
+			} else if (itemType.equals("Concentrates")) {
+				v = LayoutInflater.from(mContext).inflate(R.layout.list_menu_row_concentrates, null);
+			}
 			if (type == TYPE_HEADER) {
 				return v;
 			} else {
@@ -297,30 +313,40 @@ public class MenuScreen extends Activity {
 		public Button button4;
 		public Button button2;
 		public Button button82;
+		public String itemType;
 		
-		public RowViewHolder(View v) {
+		public RowViewHolder(View v, String item_type) {
+			itemType = item_type;
 			header = (ImageView) v.findViewById(R.id.menu_header);
 			name = (TextView) v.findViewById(R.id.menu_name);
 			
 			View v1 = v.findViewById(R.id.button1);
 			buttonG = (Button)v1.findViewById(R.id.menu_button_price);
-			((ImageView)v1.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_g);
 			
-			View v2 = v.findViewById(R.id.button2);
-			button8 = (Button)v2.findViewById(R.id.menu_button_price);
-			((ImageView)v2.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_18);
-			
-			View v3 = v.findViewById(R.id.button3);
-			button4 = (Button)v3.findViewById(R.id.menu_button_price);
-			((ImageView)v3.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_14);
-			
-			View v4 = v.findViewById(R.id.button4);
-			button2 = (Button)v4.findViewById(R.id.menu_button_price);
-			((ImageView)v4.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_12);
-			
-			View v5 = v.findViewById(R.id.button5);
-			button82 = (Button)v5.findViewById(R.id.menu_button_price);
-			((ImageView)v5.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_18);
+			if (itemType.equals("Edibles") || itemType.equals("Merchandise") || itemType.equals("Clones") || itemType.equals("Seeds")) {
+				((ImageView)v1.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.ea);
+			} else {
+				((ImageView)v1.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_g);
+				View v2 = v.findViewById(R.id.button2);
+				button8 = (Button)v2.findViewById(R.id.menu_button_price);
+				((ImageView)v2.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_18);
+				if (itemType.equals("Concentrates")) {
+					((ImageView)v1.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.g_12);
+					((ImageView)v2.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_g);
+				} else {
+					View v3 = v.findViewById(R.id.button3);
+					button4 = (Button)v3.findViewById(R.id.menu_button_price);
+					((ImageView)v3.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_14);
+					
+					View v4 = v.findViewById(R.id.button4);
+					button2 = (Button)v4.findViewById(R.id.menu_button_price);
+					((ImageView)v4.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.icon_12);
+					
+					View v5 = v.findViewById(R.id.button5);
+					button82 = (Button)v5.findViewById(R.id.menu_button_price);
+					((ImageView)v5.findViewById(R.id.menu_type_icon)).setBackgroundResource(R.drawable.oz);
+				}
+			}
 		}
 	}
 }

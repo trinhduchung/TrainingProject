@@ -56,10 +56,17 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 	private ProgressDialog pd;
 	private ImageButton btn_refresh;
 	private boolean flag=false;
+	private String position;
+	private boolean fromOverlay;
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dispensaries_list);
+        Intent intent = getIntent();
+        fromOverlay = intent.getBooleanExtra("from_overlay", false);
+        if (fromOverlay) {
+        	position = intent.getStringExtra("position");
+        }
         if(DispensaryConstant.global_flag==2){
         	Intent intent1=new Intent(this,SearchScreen.class);
 			startActivity(intent1);
@@ -148,7 +155,14 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 	}
 	public void run() 
 	{
-		String str=DispensaryConstant.DISPENSARY_LIST+"latitude="+DispensaryConstant.latitude+"&longitude="+DispensaryConstant.longitude;
+		String str = DispensaryConstant.DISPENSARY_LIST+"latitude="+DispensaryConstant.latitude+"&longitude="+DispensaryConstant.longitude;
+		if (fromOverlay) {
+			String[] arrStr = position.split(",");
+			if (arrStr.length >= 2) {
+				str = DispensaryConstant.DISPENSARY_LIST+"latitude="+arrStr[0].trim()+"&longitude="+arrStr[1].trim();
+				System.out.println(str);
+			}
+		}
 			    WifiManager wifimanger=(WifiManager) this.getSystemService(Context.WIFI_SERVICE);
 				
 			    /****CehckIng Wifi or Network Connection****/

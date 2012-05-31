@@ -69,6 +69,7 @@ public class MapScreen extends MapActivity{
 					image = getResources().getDrawable(R.drawable.green_leaf);	
 				}
 				overlayLayout = new MyItemizedOverlay(image, mapView);
+				overlayLayout.setContext(this);
 				if(lat.equals("0")||lont.equals("0"))
 				{
 					Builder builder = new AlertDialog.Builder(MapScreen.this);
@@ -82,7 +83,7 @@ public class MapScreen extends MapActivity{
 							dialog.dismiss();
 //							finish();
 							 final MapController mc = mapView.getController();
-						        mc.setZoom(3);
+						        mc.setZoom(8);
 							
 						}
 					});
@@ -107,9 +108,10 @@ public class MapScreen extends MapActivity{
 			        mapOverlay.add(overlayLayout);
 			        final MapController mc = mapView.getController();
 			        mc.animateTo(points[0]);
-			        mc.setZoom(13);
+			        mc.setZoom(14);
 
-			        mapView.setSatellite(true);
+			        mapView.setStreetView(true);
+			        mapView.setSatellite(false);
 				}
 			}
 			catch(Exception e){

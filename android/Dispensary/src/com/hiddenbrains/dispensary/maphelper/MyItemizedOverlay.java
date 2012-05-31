@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.widget.Toast;
 
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
+import com.hiddenbrains.dispensary.screen.DispensaryListScreen;
 public class MyItemizedOverlay extends ShowBalloonItem<OverlayItem>{
 	private ArrayList<OverlayItem> m_overlays = new ArrayList<OverlayItem>();
 	private Context mContext;
@@ -38,8 +39,13 @@ public class MyItemizedOverlay extends ShowBalloonItem<OverlayItem>{
 
 	@Override
 	protected boolean onBalloonTap(int index) {
-		System.out.println("ballon tap");
-		((Activity) mContext ).finish();
+		System.out.println("ballon tap" + m_overlays.get(index).routableAddress());
+		if (mContext != null) {
+			Intent intent = new Intent(mContext, DispensaryListScreen.class);
+			intent.putExtra("from_overlay", true);
+			intent.putExtra("position", m_overlays.get(index).routableAddress());
+			((Activity) mContext ).startActivity(intent);
+		} 
 		return true;
 	}
 	
