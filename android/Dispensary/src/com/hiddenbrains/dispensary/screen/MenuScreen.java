@@ -118,6 +118,13 @@ public class MenuScreen extends Activity {
 					Element typeElement = (Element) menuElement.getElementsByTagName("type").item(0);
 					item.type = typeElement.getFirstChild().getNodeValue();
 					
+					Element price12GElement = (Element) menuElement.getElementsByTagName("price_12g").item(0);
+					if (price12GElement != null) {
+						item.price12G = price12GElement.getFirstChild().getNodeValue();
+					} else {
+						item.price12G = "0";
+					}
+					
 					Element priceGElement = (Element) menuElement.getElementsByTagName("price_g").item(0);
 					item.priceG = priceGElement.getFirstChild().getNodeValue();
 					
@@ -173,6 +180,7 @@ public class MenuScreen extends Activity {
 		public String name;
 		public String strainId;
 		public String desc;
+		public String price12G;
 		public String priceG;
 		public String price8;
 		public String price4;
