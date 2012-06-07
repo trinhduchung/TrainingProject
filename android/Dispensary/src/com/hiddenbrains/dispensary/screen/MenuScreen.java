@@ -118,7 +118,7 @@ public class MenuScreen extends Activity {
 					Element typeElement = (Element) menuElement.getElementsByTagName("type").item(0);
 					item.type = typeElement.getFirstChild().getNodeValue();
 					
-					Element price12GElement = (Element) menuElement.getElementsByTagName("price_12g").item(0);
+					Element price12GElement = (Element) menuElement.getElementsByTagName("price_2g").item(0);
 					if (price12GElement != null) {
 						item.price12G = price12GElement.getFirstChild().getNodeValue();
 					} else {
@@ -247,7 +247,7 @@ public class MenuScreen extends Activity {
 			} else {
 				viewHolder.button8.setText(dolar + item.price8);
 				if (item.type.equals("Concentrates")) {
-					viewHolder.buttonG.setText(dolar + item.price8);
+					viewHolder.buttonG.setText(dolar + item.price12G);
 					viewHolder.button8.setText(dolar + item.priceG);
 				} else {
 					viewHolder.button4.setText(dolar + item.price4);
