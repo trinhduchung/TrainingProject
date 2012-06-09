@@ -186,7 +186,6 @@ public class From_Main_Search extends Activity implements OnClickListener,
 				String line;
 
 				while ((line = bfr.readLine()) != null) {
-					System.out.println(line);
 					JSONArray jsa = new JSONArray(line);
 					for (int i = 0; i < jsa.length(); i++) {
 						JSONObject jo = (JSONObject) jsa.get(i);

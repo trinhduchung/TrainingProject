@@ -25,8 +25,6 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -41,10 +39,10 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 {
 	/** Called when the activity is first created. */
 	public static ArrayList<String> title;
-	private ArrayList<String> distance;
-	private ArrayList<String> image;
-	private ArrayList<String> online_image;
-	private ArrayList<String> dispensary_id;
+	public static ArrayList<String> distance;
+	public static ArrayList<String> image;
+	public static ArrayList<String> online_image;
+	public static ArrayList<String> dispensary_id;
 	public static ArrayList<String> address;
 	public static ArrayList<String> lat=new ArrayList<String>();
 	public static ArrayList<String> longt=new ArrayList<String>();
@@ -160,7 +158,6 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 			String[] arrStr = position.split(",");
 			if (arrStr.length >= 2) {
 				str = DispensaryConstant.DISPENSARY_LIST+"latitude="+arrStr[0].trim()+"&longitude="+arrStr[1].trim();
-				System.out.println(str);
 			}
 		}
 			    WifiManager wifimanger=(WifiManager) this.getSystemService(Context.WIFI_SERVICE);

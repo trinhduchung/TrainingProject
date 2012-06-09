@@ -20,6 +20,7 @@ public class MapScreenAll extends MapActivity {
     Drawable image;
     List<Overlay> mapOverlay;
     MyItemizedOverlay overlayLayout;
+    public static final String LIST_OVERLAY_ITEM = "list_overlay_item";
     
     @Override
 	public void onCreate(Bundle savedInstanceState) 
@@ -86,6 +87,9 @@ public class MapScreenAll extends MapActivity {
 		        overlayLayout.addOverlay(overlayItem[i]);
 		        mapOverlay.add(overlayLayout);
 	        }
+	        
+	        DispansaryApplication app = DispansaryApplication.sharedInstance();
+	        app.putData(LIST_OVERLAY_ITEM, overlayItem);
 	        
 	        final MapController mc = mapview.getController();
 	        mc.animateTo(points[0]);

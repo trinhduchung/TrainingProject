@@ -110,7 +110,6 @@ public class GPSService {
 					_locManager.removeUpdates(_networkLocListener);
 					_listener.onGetGPSFail();
 				} else if (msg.what == 2) {
-					System.out.println("here");
 					if (_locListener != null) {
 						_locManager.removeUpdates(_locListener);
 					}
@@ -154,7 +153,6 @@ public class GPSService {
 					e.printStackTrace();
 				}
 				_listener.onGetGPSSuccess(_gpsInfo);
-				System.out.println("on location changed : " + _gpsInfo.getInfo());
 			} else {
 				_locManager.removeUpdates(this);
 				_listener.onGetGPSFail();

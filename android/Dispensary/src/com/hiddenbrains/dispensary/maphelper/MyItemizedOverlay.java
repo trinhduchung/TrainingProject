@@ -39,6 +39,7 @@ public class MyItemizedOverlay extends ShowBalloonItem<OverlayItem>{
 
 	@Override
 	protected boolean onBalloonTap(int index) {
+		/*
 		System.out.println("ballon tap" + m_overlays.get(index).routableAddress());
 		if (mContext != null) {
 			Intent intent = new Intent(mContext, DispensaryListScreen.class);
@@ -46,6 +47,7 @@ public class MyItemizedOverlay extends ShowBalloonItem<OverlayItem>{
 			intent.putExtra("position", m_overlays.get(index).routableAddress());
 			((Activity) mContext ).startActivity(intent);
 		} 
+		*/
 		return true;
 	}
 	

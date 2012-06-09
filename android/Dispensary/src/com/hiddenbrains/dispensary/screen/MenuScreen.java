@@ -69,7 +69,6 @@ public class MenuScreen extends Activity {
 				});
 				
 				String url = urls[0];
-				System.out.println(url);
 				final DefaultHttpClient client = new DefaultHttpClient();
 				HttpParams params = client.getParams();
 				HttpConnectionParams.setConnectionTimeout(params, 20000);

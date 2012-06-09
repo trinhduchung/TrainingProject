@@ -48,7 +48,7 @@ public class ShowBalloonItem<Item> extends ItemizedOverlay<OverlayItem>{
 		
 		thisIndex = index;
 		point = createItem(index).getPoint();
-		
+
 		if (balloonView == null) {
 			balloonView = new BalloonOverlayView(mapView.getContext(), viewOffset);
 			clickRegion = (View) balloonView.findViewById(R.id.balloon_inner_layout);
@@ -64,7 +64,7 @@ public class ShowBalloonItem<Item> extends ItemizedOverlay<OverlayItem>{
 			hideOtherBalloons(mapOverlays);
 		}
 		
-		balloonView.setData(createItem(index));
+		balloonView.setData(createItem(index) , index);
 		
 		MapView.LayoutParams params = new MapView.LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, point,
