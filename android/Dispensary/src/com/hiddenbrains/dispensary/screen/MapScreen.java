@@ -14,6 +14,7 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
+import com.hiddenbrains.dispensary.common.DispensaryConstant;
 import com.hiddenbrains.dispensary.maphelper.MyItemizedOverlay;
 import com.hiddenbrains.dispensary.resource.ResourceLatLong;
 
@@ -32,6 +33,7 @@ public class MapScreen extends MapActivity{
 			try
 			{
 				setContentView(R.layout.map_screen);
+				DispensaryConstant.map_flag = 1;
 				mapView=(MapView) findViewById(R.id.mapview);
 				mapView.setBuiltInZoomControls(true);
 //				image=getResources().getDrawable(R.drawable.green_leaf);

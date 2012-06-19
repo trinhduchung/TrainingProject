@@ -4,7 +4,7 @@ public class DispensaryConstant
 {
 	//variable
 	public static int global_flag = 0;
-	
+	public static int map_flag = 0;
 	public static String latitude="";
 	public static String longitude="";
 	
