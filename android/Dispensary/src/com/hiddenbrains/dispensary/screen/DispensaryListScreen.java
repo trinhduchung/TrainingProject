@@ -123,6 +123,7 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 				       thread.start();
 					break;
 				case R.id.d_btn_map:
+					
 					Bundle bundle=new Bundle();
 					
 					bundle.putInt("index",1);

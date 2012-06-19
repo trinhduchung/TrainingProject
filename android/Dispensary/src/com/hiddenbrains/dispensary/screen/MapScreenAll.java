@@ -11,6 +11,7 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
+import com.hiddenbrains.dispensary.common.DispensaryConstant;
 import com.hiddenbrains.dispensary.maphelper.MyItemizedOverlay;
 import com.hiddenbrains.dispensary.resource.ResourceLatLong;
 
@@ -29,7 +30,7 @@ public class MapScreenAll extends MapActivity {
         try
 		{
 	        setContentView(R.layout.map_screen);
-	        
+	        DispensaryConstant.map_flag = 0;
 	        Bundle bundle = this.getIntent().getExtras();
 	        int index = bundle.getInt("index");
 	        ResourceLatLong resource = new ResourceLatLong(index);

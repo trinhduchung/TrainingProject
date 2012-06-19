@@ -46,7 +46,7 @@ public class BalloonOverlayView extends FrameLayout {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		View v = inflater.inflate(R.layout.balloon_map_overlay, layout);
+		View v;
 		if (DispensaryConstant.map_flag == 1) {
 			v = inflater.inflate(R.layout.balloon_map_one_item_overlay, layout);
 			title = (TextView) v.findViewById(R.id.balloon_item_title);
