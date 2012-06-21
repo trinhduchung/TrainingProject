@@ -13,12 +13,14 @@ using namespace cv;
 
 
 @interface FindObjectViewController ()
-
+- (void) showAlert;
 @end
 
 @implementation FindObjectViewController
 @synthesize img1, galeryView;
 @synthesize imgCorrespond;
+@synthesize pickedImage = _pickedImage;
+@synthesize listCard;
 
 #pragma mark - C++ 
 void help()
@@ -239,11 +241,12 @@ IplImage * convertRGB2Grayscale(IplImage * src) {
     return self;
 }
 
-- (void) findObject:(IplImage *) object andScene:(IplImage *) image {
-    self.title = @"Detecting ...";
-    NSTimeInterval start = [[NSDate date] timeIntervalSince1970];
+- (BOOL) findObject:(IplImage *) object andScene:(IplImage *) image {
     
-    double tt = (double)cvGetTickCount();
+    BOOL success = FALSE;
+//    NSTimeInterval start = [[NSDate date] timeIntervalSince1970];
+    
+//    double tt = (double)cvGetTickCount();
     CvMemStorage* storage = cvCreateMemStorage(0);
     
     static CvScalar colors[] = 
@@ -269,10 +272,10 @@ IplImage * convertRGB2Grayscale(IplImage * src) {
     
     //        double tt = (double)cvGetTickCount();
     cvExtractSURF( object, 0, &objectKeypoints, &objectDescriptors, storage, params );
-    printf("Object Descriptors: %d\n", objectDescriptors->total);
+//    printf("Object Descriptors: %d\n", objectDescriptors->total);
     
     cvExtractSURF( image, 0, &imageKeypoints, &imageDescriptors, storage, params );
-    printf("Image Descriptors: %d\n", imageDescriptors->total);
+//    printf("Image Descriptors: %d\n", imageDescriptors->total);
     //        tt = (double)cvGetTickCount() - tt;
     
     //        printf( "Extraction time = %gms\n", tt/(cvGetTickFrequency()*1000.));
@@ -287,17 +290,14 @@ IplImage * convertRGB2Grayscale(IplImage * src) {
     cvResetImageROI( correspond );
     
 #ifdef USE_FLANN
-    printf("Using approximate nearest neighbor search\n");
+//    printf("Using approximate nearest neighbor search\n");
 #endif
     
-    int iPlanar = locatePlanarObject( objectKeypoints, objectDescriptors, imageKeypoints,
-                                     imageDescriptors, src_corners, dst_corners );
-    printf("iPlanar = %d\n", iPlanar);
     if(locatePlanarObject( objectKeypoints, objectDescriptors, imageKeypoints,
-                          imageDescriptors, src_corners, dst_corners ))
+                          imageDescriptors, src_corners, dst_corners ) == 1)
     {
-        printf("Object found");
-        self.title = @"Object found";
+        NSLog(@"object found %@", [galeryView getCurrentCard]);
+        success = TRUE;
         for( i = 0; i < 4; i++ )
         {
             CvPoint r1 = dst_corners[i%4];
@@ -306,7 +306,8 @@ IplImage * convertRGB2Grayscale(IplImage * src) {
                    cvPoint(r2.x, r2.y+object->height ), colors[8] );
         }
     } else {
-        self.title = @"Object not found";
+        success = FALSE;
+        NSLog(@"object not found %@", [galeryView getCurrentCard]);
     }
     vector<int> ptpairs;
 #ifdef USE_FLANN
@@ -326,9 +327,9 @@ IplImage * convertRGB2Grayscale(IplImage * src) {
     //cvShowImage( "Object Correspond", correspond );
     IplImage *correspondColor = cvCreateImage(cvGetSize(correspond), 8, 3);
     cvCvtColor( correspond, correspondColor, CV_GRAY2BGR );
-    
     UIImage * img_correspond = [[UIImage alloc] initWithIplImage:correspondColor];
-    img1.image = img_correspond;
+    
+    [NSThread detachNewThreadSelector:@selector(updateResultImage:) toTarget:self withObject:img_correspond];
     
     /*
      for( i = 0; i < objectKeypoints->total; i++ )
@@ -345,10 +346,16 @@ IplImage * convertRGB2Grayscale(IplImage * src) {
     
     //show image
     //cvShowImage( "Object", object_color );
-    printf( "Extraction time = %gms\n", 1000 * ((double)cvGetTickCount() - tt) / (cvGetTickFrequency()));
-    NSTimeInterval stop = [[NSDate date] timeIntervalSince1970];
-    NSLog(@"%f", (stop - start) * 36);
+//    printf( "Extraction time = %gms\n", 1000 * ((double)cvGetTickCount() - tt) / (cvGetTickFrequency()));
+//    NSTimeInterval stop = [[NSDate date] timeIntervalSince1970];
+//    NSLog(@"total time = %f", (stop - start));
     
+    
+    return success;
+}
+
+- (void) updateResultImage:(UIImage *) img_correspond {
+    img1.image = img_correspond;
 }
 
 - (void)viewDidLoad
@@ -359,14 +366,25 @@ IplImage * convertRGB2Grayscale(IplImage * src) {
     imgCorrespond = [[UIImageView alloc] init];
     imgCorrespond.frame = self.view.frame;
     
-    UIBarButtonItem *btnRequest = [[UIBarButtonItem alloc] initWithTitle:@"" 
+    _pickedImage = [[UIImage alloc] init];
+    _pickedImage = [UIImage imageNamed:@"2.jpg"];
+    
+    UIBarButtonItem *btnShowHide = [[UIBarButtonItem alloc] initWithTitle:@"Detect" 
                                                                    style:UIBarButtonItemStyleBordered 
                                                                   target:self 
-                                                                  action:@selector(showHide)];
-    self.navigationItem.rightBarButtonItem = btnRequest;
-    [btnRequest release];
+                                                                  action:@selector(didDetectButtonClicked)];
+    self.navigationItem.rightBarButtonItem = btnShowHide;
+    [btnShowHide release];
     
-    [self findObject];
+    UIBarButtonItem *btnCapture = [[UIBarButtonItem alloc] initWithTitle:@"Take Image" 
+                                                                    style:UIBarButtonItemStyleBordered 
+                                                                   target:self 
+                                                                  action:@selector(takePicture:)];
+    self.navigationItem.leftBarButtonItem = btnCapture;
+    [btnCapture release];
+    
+    self.img1.image = _pickedImage;
+    listCard = [[NSMutableArray alloc] init];
 }
 
 - (void)viewDidUnload
@@ -381,31 +399,161 @@ IplImage * convertRGB2Grayscale(IplImage * src) {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void) showHide {
-    BOOL isScrollHiden = galeryView.scrollView.isHidden;
-    isScrollHiden = !isScrollHiden;
-    galeryView.scrollView.hidden = isScrollHiden;
+- (void) takePicture:(id) sender {
+    if (_picker) {
+        [_picker release];
+        _picker = nil;
+    }
+    _picker = [[UIImagePickerController alloc] init];
+    _picker.delegate = self;
+#if TARGET_IPHONE_SIMULATOR
+    _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+#else
+    _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+#endif
+    
+    [self presentModalViewController:_picker animated:YES];
 }
 
-- (void) findObject {
-    UIImage * img = [UIImage imageNamed:@"box.jpg"];
-    IplImage * object = [img CreateIplImageFromUIImage:[UIImage imageNamed:@"Jack.png"]];
+- (void) showHide:(BOOL) isHiden {
+    galeryView.scrollView.hidden = isHiden;
+}
+
+- (BOOL) findObject:(UIImage *) scene {
+    UIImage * img = [UIImage imageNamed:@"box.png"];
+    IplImage * object = [img CreateIplImageFromUIImage:[UIImage imageNamed:@"ar.jpg"]];
     if (galeryView.totalItems > 0) {
         UIImage * currImg =  [[galeryView getCurrentImageDisplay] retain];
         object = [img CreateIplImageFromUIImage:currImg];
         
     }
     object = convertRGB2Grayscale(object);
-    UIImage * scene = [UIImage imageNamed:@"2.jpg"];
+    if (scene == nil) {
+        scene = [UIImage imageNamed:@"2.jpg"];
+    }
     img1.image = scene;
+    
     IplImage * image = [img CreateIplImageFromUIImage:scene];
     image = convertRGB2Grayscale(image);
     
-    [self findObject:object andScene:image];
+    BOOL success = [self findObject:object andScene:image];
+    
+    [self showHide:YES];
+    
+    return success;
+}
+
+- (UIImage*)imageWithImage:(UIImage*)image 
+              scaledToSize:(CGSize)newSize;
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+#pragma mark - UIImagePickerControllerDelegate implementation
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image
+                  editingInfo:(NSDictionary *)editingInfo
+{
+    [picker dismissModalViewControllerAnimated:YES];
+    //[self imageWithImage:image scaledToSize:CGSizeMake(image.size.width / 5, image.size.height / 5)];
+    Mat mScene = [image CVMat];
+    Mat mRSScene;
+    resize(mScene, mRSScene, cvSize(mScene.rows / 5, mScene.cols / 5));
+    UIImage *scene = [[UIImage alloc] initWithCVMat:mRSScene];
+    
+    self.img1.image = scene;
+    if (_pickedImage) {
+        [_pickedImage release];
+        _pickedImage = nil;
+    }
+    _pickedImage = [scene retain];
+    
+    self.title = @"Detecting ...";
+    [self showHide:NO];
+    
+    [galeryView resetGallery];
+    [NSThread detachNewThreadSelector:@selector(createQueue) toTarget:self withObject:nil];
+}
+
+- (void) createQueue {
+    NSTimeInterval start = [[NSDate date] timeIntervalSince1970];
+    NSOperationQueue *queue = [NSOperationQueue new];
+    NSMutableArray * arrOperation = [[NSMutableArray alloc] init];
+    for (int i = 0;i < galeryView.totalItems;i++) {
+        NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self
+                                                                                selector:@selector(doDetect:)
+                                                                                  object:nil];
+        [arrOperation addObject:operation];
+        [operation release];
+    }
+    
+    [queue setMaxConcurrentOperationCount:1];
+    [queue addOperations:arrOperation waitUntilFinished:YES];
+    [queue release];
+
+    NSTimeInterval stop = [[NSDate date] timeIntervalSince1970];
+    NSLog(@"total time = %f", (stop - start));
+
+    [NSThread detachNewThreadSelector:@selector(showAlert) toTarget:self withObject:nil];
+}
+
+- (void) showAlert {
+    NSString * message = @"";
+    for (NSString * str in listCard) {
+        [message stringByAppendingFormat:@"- %@", str];
+    }
+    
+    if ([message isEqualToString:@""]) {
+        message = @"no card found";
+    }
+    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:[listCard description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+}
+
+- (void) doDetect:(id) object {
+    BOOL success = [self findObject:_pickedImage];
+    NSString * title = [NSString stringWithFormat:@"found %@", [galeryView getCurrentCard]];
+    if (success) {
+        [listCard addObject:[galeryView getCurrentCard]];
+    } else {
+        title = [NSString stringWithFormat:@"not found %@", [galeryView getCurrentCard]];
+    }
+    
+    [NSThread detachNewThreadSelector:@selector(updateGallery:) toTarget:self withObject:title];
+}
+
+- (void) updateGallery: (NSString *) title {
+    self.title = title;
+    [galeryView slideShow];
+    [self showHide:NO];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissModalViewControllerAnimated:YES];
+}
+
+- (void) didDetectButtonClicked {
+    [self showHide:NO];
+    self.title = @"Detecting ...";
+    self.img1.image = _pickedImage;
+    if (_pickedImage) {
+        [NSThread detachNewThreadSelector:@selector(findObject:) toTarget:self withObject:_pickedImage];
+    } else {
+        [NSThread detachNewThreadSelector:@selector(findObject:) toTarget:self withObject:nil];
+    }
 }
 
 - (void) didArrowButtonClicked {
-    [self findObject];
+    [self showHide:NO];
 }
 
 @end

@@ -31,6 +31,8 @@
     id                          _delegate;
 
 }
+
+@property (nonatomic, retain) NSMutableDictionary   *mapCard;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, assign) int totalItems;
 @property (nonatomic, assign) id delegate;
@@ -38,4 +40,7 @@
 - (void) notifyDataSetChanged;
 - (UIImage *) getCurrentImageDisplay;
 - (void) slideShow;
+- (NSString *) getCurrentCard;
+- (BOOL) canNext;
+- (void) resetGallery;
 @end

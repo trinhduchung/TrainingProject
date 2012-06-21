@@ -16,16 +16,17 @@
 
 + (void) createDirectoryAtPath:(NSString *)path {
     NSFileManager *fm = [NSFileManager defaultManager];
-    [fm createDirectoryAtPath:path attributes:nil];
+    NSError *error;
+    [fm createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
 }
 
 + (NSString *) getImageCardObjectDir {
     NSString *dir = [Utils documentsPath];
-    NSString *imgDir = [dir stringByAppendingFormat:@"/%@",@"card_object"];
+//    NSString *imgDir = [dir stringByAppendingFormat:@"/%@",@"card_object"];
     NSFileManager *fm = [NSFileManager defaultManager];
-    if (![fm fileExistsAtPath:imgDir]) {
-        [Utils createDirectoryAtPath:imgDir];
+    if (![fm fileExistsAtPath:dir]) {
+        [Utils createDirectoryAtPath:dir];
     }
-    return imgDir;
+    return dir;
 }
 @end

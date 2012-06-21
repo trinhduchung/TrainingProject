@@ -350,6 +350,7 @@
 		0013FA1714111D0E004DC957 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Aptogo Limited";
 			};
 			buildConfigurationList = 0013FA1A14111D0E004DC957 /* Build configuration list for PBXProject "OpenCVClient" */;
@@ -484,7 +485,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Trinh Hung (5Q8J2UH33Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Trinh Hung (5Q8J2UH33Y)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -498,6 +500,8 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				PROVISIONING_PROFILE = "4AE95A3A-E872-4F9B-ADA8-49037E30ED31";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4AE95A3A-E872-4F9B-ADA8-49037E30ED31";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -506,7 +510,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Trinh Hung (5Q8J2UH33Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Trinh Hung (5Q8J2UH33Y)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -514,6 +519,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "4AE95A3A-E872-4F9B-ADA8-49037E30ED31";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4AE95A3A-E872-4F9B-ADA8-49037E30ED31";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -532,6 +539,7 @@
 				GCC_PREFIX_HEADER = "OpenCVClient/OpenCVClient-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "OpenCVClient/OpenCVClient-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4AE95A3A-E872-4F9B-ADA8-49037E30ED31";
@@ -553,6 +561,7 @@
 				GCC_PREFIX_HEADER = "OpenCVClient/OpenCVClient-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "OpenCVClient/OpenCVClient-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4AE95A3A-E872-4F9B-ADA8-49037E30ED31";

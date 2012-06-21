@@ -25,6 +25,7 @@
 @synthesize totalItems = _totalItems;
 @synthesize delegate = _delegate;
 @synthesize scrollView = _scrollView;
+@synthesize mapCard;
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -80,7 +81,7 @@
 }
 
 - (void) notifyDataSetChanged {
-    NSLog(@"notifyDataSetChanged");
+//    NSLog(@"notifyDataSetChanged");
     [_imageLinks removeAllObjects];
     [_views removeAllObjects];
     
@@ -93,18 +94,38 @@
     NSString *cardImgDir = [Utils getImageCardObjectDir];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *arr = [fileManager contentsOfDirectoryAtPath:cardImgDir error:nil];
-    
+    NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self ENDSWITH '.JPG'"];
+    NSArray * arrOnlyImages = [arr filteredArrayUsingPredicate:fltr];
     if(_imageLinks){
         [_imageLinks release];
         _imageLinks = nil;
     }
-    _imageLinks = [[NSMutableArray alloc] initWithArray:arr];
+    _imageLinks = [[NSMutableArray alloc] initWithArray:arrOnlyImages];
+    if (mapCard) {
+        [mapCard release];
+        mapCard = nil;
+    }
+    mapCard = [[NSMutableDictionary alloc] init];
+    for (NSString * link in _imageLinks) {
+        [mapCard setValue:[link stringByDeletingPathExtension] forKey:link];
+    }
 }
 
 - (void) slideShow {
-    (_currentItemIndex - 1) < 0 ? (_currentItemIndex = 0) : (_currentItemIndex = _currentItemIndex - 1);
+    (_currentItemIndex + 1) >= _totalItems ? (_currentItemIndex = _totalItems - 1) : (_currentItemIndex = _currentItemIndex + 1);
     [self scrollToPage:_currentItemIndex];
     [self updateArrowButton];
+}
+
+- (BOOL) canNext {
+    return _currentItemIndex < _totalItems - 1;
+}
+
+- (void) resetGallery {
+    _currentItemIndex = 0;
+    [self scrollToPage:_currentItemIndex];
+    [self updateArrowButton];
+    [_delegate didArrowButtonClicked];
 }
 
 - (void) didArrowClicked:(id) sender {
@@ -149,7 +170,8 @@
     }
     _totalItems = [_views count];
     
-    _totalItems == 0 ? (_currentItemIndex = 0) : (_currentItemIndex = _totalItems - 1);
+//    _totalItems == 0 ? (_currentItemIndex = 0) : (_currentItemIndex = _totalItems - 1);
+    _currentItemIndex = 0;
     
     for (UIView *view in _scrollView.subviews) {
         [view removeFromSuperview];
@@ -202,7 +224,7 @@
     int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     if (0 <= page && page < _totalItems) {
         _currentItemIndex = page;
-        NSLog(@"%d", _currentItemIndex);
+//        NSLog(@"%d", _currentItemIndex);
     }
     
     [self updateArrowButton];
@@ -215,6 +237,11 @@
     
     UIImage *img = [UIImage imageWithContentsOfFile:fullPath];
     return img;
+}
+
+- (NSString *) getCurrentCard {
+    NSString *imgPath = [_imageLinks objectAtIndex:_currentItemIndex];
+    return [mapCard valueForKey:imgPath];
 }
 
 - (void) dealloc {
