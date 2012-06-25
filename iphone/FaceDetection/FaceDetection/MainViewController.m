@@ -94,12 +94,17 @@
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
-        CIImage *image = [[CIImage alloc] initWithImage:[FACE_IMAGES objectAtIndex:self.currentIndex]];
+        UIImage *faceImage = [FACE_IMAGES objectAtIndex:self.currentIndex];
+        
+        
+        faceImage = [self imageWithImage:faceImage scaledToSize:self.activeImageView.frame.size];
+        CIImage *image = [[CIImage alloc] initWithImage:faceImage];
 
         NSString *accuracy = self.useHighAccuracy ? CIDetectorAccuracyHigh : CIDetectorAccuracyLow;
         NSDictionary *options = [NSDictionary dictionaryWithObject:accuracy forKey:CIDetectorAccuracy];
         CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:options];
 
+        
         NSArray *features = [detector featuresInImage:image];
 
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -126,91 +131,123 @@ int max(int w, int h) {
     return w >= h ? w : h;
 }
 
+- (UIImage*)imageWithImage:(UIImage*)image 
+              scaledToSize:(CGSize)newSize;
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+-(UIImage*)CropImage:(UIBezierPath *)trackPath withImageView:(UIImageView *) aImgView {
+    CGContextRef mainViewContentContext;
+    CGColorSpaceRef colorSpace;
+    
+    colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    // create a bitmap graphics context the size of the image
+    mainViewContentContext = CGBitmapContextCreate(NULL, aImgView.frame.size.width, aImgView.frame.size.height, 8, aImgView.frame.size.width * 4, colorSpace, kCGImageAlphaPremultipliedLast);
+    
+    // free the rgb colorspace
+    CGColorSpaceRelease(colorSpace);
+    
+    //Translate and scale image
+    CGContextTranslateCTM(mainViewContentContext, 0, aImgView.frame.size.height);
+    CGContextScaleCTM(mainViewContentContext, 1.0, -1.0);
+    
+    //the mask
+    CGContextAddPath(mainViewContentContext, trackPath.CGPath);
+    CGContextClip(mainViewContentContext);
+    
+    //Translate and scale image
+    CGContextTranslateCTM(mainViewContentContext, 0, aImgView.frame.size.height);
+    CGContextScaleCTM(mainViewContentContext, 1.0, -1.0);
+
+    //the main image
+    CGContextDrawImage(mainViewContentContext, CGRectMake(0, 0, aImgView.frame.size.width, aImgView.frame.size.height), aImgView.image.CGImage);
+    
+    //the outline
+    CGContextSetLineWidth(mainViewContentContext, 1);
+    CGContextSetRGBStrokeColor(mainViewContentContext, 181.0/256, 181.0/256, 181.0/256, 1.0);
+    
+    // Create CGImageRef of the main view bitmap content, and then
+    // release that bitmap context
+    CGImageRef mainViewContentBitmapContext = CGBitmapContextCreateImage(mainViewContentContext);
+    CGContextRelease(mainViewContentContext);
+    
+    // convert the finished resized image to a UIImage
+    UIImage *newImage = [UIImage imageWithCGImage:mainViewContentBitmapContext];
+    
+    // image is retained by the property setting above, so we can
+    // release the original
+    CGImageRelease(mainViewContentBitmapContext);
+    
+    return newImage;
+}
+
 - (void)drawImageAnnotatedWithFeatures:(NSArray *)features {
 
 	UIImage *faceImage = [FACE_IMAGES objectAtIndex:self.currentIndex];
-//    
+    
+    
+    faceImage = [self imageWithImage:faceImage scaledToSize:self.activeImageView.frame.size];
     CGRect tempRect = ((CIFaceFeature*)[features objectAtIndex:0]).bounds;
     CGRect tempRect1 = ((CIFaceFeature*)[features objectAtIndex:1]).bounds;
     
-    UIImage *face1 = [self cropImage:faceImage withRect:CGRectMake(tempRect.origin.x, tempRect.origin.y-130, tempRect.size.width, tempRect.size.height)];
-    UIImage *face2 = [self cropImage:faceImage withRect:CGRectMake(tempRect1.origin.x, tempRect1.origin.y-40, tempRect1.size.width, tempRect1.size.height)];
-    
-    UIGraphicsGetCurrentContext();
-    int x = tempRect.origin.x;
-    int y = tempRect.origin.y;
-    int width = tempRect.size.width;
-    int height = tempRect.size.height;
-    float startAngle = 0;
-    float endAngle = 90;
-    CGPoint center = CGPointMake(x + width / 2.0, y + height / 2.0);
-    UIBezierPath* clip = [UIBezierPath bezierPathWithArcCenter:center
-                                                        radius:max(width, height)
-                                                    startAngle:startAngle
-                                                      endAngle:endAngle
-                                                     clockwise:YES];
-    [clip addLineToPoint:center];
-    [clip closePath];
-    [clip addClip];
-    
-    UIBezierPath *arc = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(x, y, width, height)];
-    [[UIColor blackColor] setStroke];
-    [arc stroke];
-    
-    UIGraphicsEndImageContext();
-//    UIImageView *v1 = [[UIImageView alloc] initWithFrame:((CIFaceFeature*)[features objectAtIndex:1]).bounds];
-//    v1.image = face1;
-//    UIImageView *v2 = [[UIImageView alloc] initWithFrame:((CIFaceFeature*)[features objectAtIndex:0]).bounds];
-//    v2.image = face2;
-//    [self.scrollView addSubview:v1];
-//    [self.scrollView addSubview:v2];
-    //[face1 drawInRect:((CIFaceFeature*)[features objectAtIndex:1]).bounds];
-    //[face2 drawInRect:((CIFaceFeature*)[features objectAtIndex:0]).bounds];
-    
+    //NSLog(@"===%f : %f", self.activeImageView.bounds.origin.x, self.activeImageView.bounds.origin.y);
+    NSLog(@"---%f : %f", tempRect.origin.x, tempRect.origin.y);
+    NSLog(@"---%f : %f", tempRect1.origin.x, tempRect1.origin.y);
     UIGraphicsBeginImageContextWithOptions(faceImage.size, YES, 0);
+    
     [faceImage drawInRect:self.activeImageView.bounds];
-    [face1 drawInRect:CGRectMake(tempRect1.origin.x, tempRect1.origin.y-40, tempRect1.size.width, tempRect1.size.height)];
-    [face2 drawInRect:CGRectMake(tempRect.origin.x, tempRect.origin.y-130, tempRect.size.width, tempRect.size.height)];
+
     // Get image context reference
     CGContextRef context = UIGraphicsGetCurrentContext();
-
+    
     // Flip Context
     CGContextTranslateCTM(context, 0, self.activeImageView.bounds.size.height);
     CGContextScaleCTM(context, 1.0f, -1.0f);
-
+    
 //    CGFloat scale = [UIScreen mainScreen].scale;
-//
+//    
 //    if (scale > 1.0) {
 //        // Loaded 2x image, scale context to 50%
 //        CGContextScaleCTM(context, 0.5, 0.5);
 //    }
-//
-//    for (CIFaceFeature *feature in features) {
-//
-//        CGContextSetRGBFillColor(context, 0.0f, 0.0f, 0.0f, 0.5f);
-//        CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
-//        CGContextAddEllipseInRect(context, feature.bounds);
-//        //CGContextAddRect(context, feature.bounds);
-//        CGContextDrawPath(context, kCGPathFillStroke);
-//
-//        // Set red feature color
-//        CGContextSetRGBFillColor(context, 1.0f, 0.0f, 0.0f, 0.4f);
-//
-//        if (feature.hasLeftEyePosition) {
-//            //CGFloat faceWidth = feature.bounds.size.width;
-//            [self drawFeatureInContext:context atPoint:feature.leftEyePosition];
-//            //[self drawTest:context atPoint:CGRectMake(feature.leftEyePosition.x-faceWidth*0.15, feature.leftEyePosition.y-faceWidth*0.15, faceWidth*0.3, faceWidth*0.3)];
-//        }
-//
-//        if (feature.hasRightEyePosition) {
-//            [self drawFeatureInContext:context atPoint:feature.rightEyePosition];
-//        }
-//
-//        if (feature.hasMouthPosition) {
-//            [self drawFeatureInContext:context atPoint:feature.mouthPosition];
-//        }
-//    }
+    
+    CGFloat x = tempRect.origin.x;
+    CGFloat y = tempRect.origin.y;
+    CGFloat width = tempRect.size.width;
+    CGFloat height = tempRect.size.height;
+    
+    CGFloat x1 = tempRect1.origin.x;
+    CGFloat y1 = tempRect1.origin.y;
+    CGFloat width1 = tempRect1.size.width;
+    CGFloat height1 = tempRect1.size.height;
+    
+    UIBezierPath *arc = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(x, y, width / 3 * 2, height)];
+    [[UIColor blueColor] setStroke];
+    [arc stroke];
+    
+    UIGraphicsGetCurrentContext();
+    
+    UIBezierPath *arc1 = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(x1, y1, width1 / 3 * 2, height1)];
+    [[UIColor yellowColor] setStroke];
+    [arc1 stroke];
 
+    ///crop image with path
+    
+    UIImage *face1 = [self CropImage:arc withImageView:self.activeImageView];
+    UIImage *face2 = [self CropImage:arc1 withImageView:self.activeImageView];
+    [face1 drawInRect:CGRectMake(tempRect1.origin.x, tempRect1.origin.y, tempRect1.size.width, tempRect1.size.height)];
+    [face2 drawInRect:CGRectMake(tempRect.origin.x, tempRect.origin.y, tempRect.size.width, tempRect.size.height)];
+
+
+    
+    
     self.activeImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 

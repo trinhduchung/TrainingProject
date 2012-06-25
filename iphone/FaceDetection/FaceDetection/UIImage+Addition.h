@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Addition)
-- (UIImage *)cropImageWithPath:(CGMutablePathRef)path;
 - (UIImage *)cropImageWithRect:(CGRect)rect;
+- (UIImage *)cropImageWithPath:(CGMutablePathRef)path;
+- (UIImage *)cropImageWithBezierPath:(UIBezierPath *)path;
 @end
