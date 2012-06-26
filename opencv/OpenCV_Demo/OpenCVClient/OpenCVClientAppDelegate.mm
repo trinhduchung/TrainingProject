@@ -29,8 +29,9 @@
 {
     // Override point for customization after application launch.
     FindObjectViewController * vc = [[[FindObjectViewController alloc] initWithNibName:@"FindObjectViewController" bundle:nil] autorelease];
+    CaptureImageViewController * viewController  = [[[CaptureImageViewController alloc] init] autorelease];
     
-    UINavigationController *rootController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    UINavigationController *rootController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
     self.window.rootViewController = rootController;
     [self.window makeKeyAndVisible];
     return YES;

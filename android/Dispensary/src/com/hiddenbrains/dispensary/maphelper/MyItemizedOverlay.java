@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 import com.hiddenbrains.dispensary.common.DispensaryConstant;
+import com.hiddenbrains.dispensary.screen.DispansaryApplication;
 import com.hiddenbrains.dispensary.screen.DispensaryListScreen;
 public class MyItemizedOverlay extends ShowBalloonItem<OverlayItem>{
 	private ArrayList<OverlayItem> m_overlays = new ArrayList<OverlayItem>();
@@ -40,7 +41,7 @@ public class MyItemizedOverlay extends ShowBalloonItem<OverlayItem>{
 
 	@Override
 	protected boolean onBalloonTap(int index) {
-		if (DispensaryConstant.map_flag == 1) {
+		if (DispansaryApplication.map_flag == 1) {
 			
 			System.out.println("ballon tap" + m_overlays.get(index).routableAddress());
 			if (mContext != null) {

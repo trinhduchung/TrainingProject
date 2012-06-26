@@ -22,8 +22,6 @@
 		0049651B15987A0500AF8A2B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0049651A15987A0500AF8A2B /* Security.framework */; };
 		0049651D15987A3F00AF8A2B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0049651C15987A3F00AF8A2B /* MobileCoreServices.framework */; };
 		0049651F15987A7700AF8A2B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0049651E15987A7700AF8A2B /* ImageIO.framework */; };
-		0049652215987ABF00AF8A2B /* NYXProgressiveImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0049652115987ABF00AF8A2B /* NYXProgressiveImageView.m */; };
-		0049652415987ACD00AF8A2B /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0049652315987ACD00AF8A2B /* libcommonCrypto.dylib */; };
 		187BFF3E156C89C600B20CF0 /* abc.png in Resources */ = {isa = PBXBuildFile; fileRef = 187BFF3D156C89C600B20CF0 /* abc.png */; };
 		187DBD09155783BA00A8F589 /* ava3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 187DBD06155783BA00A8F589 /* ava3.jpg */; };
 		187DBD0C1557859400A8F589 /* ava1.png in Resources */ = {isa = PBXBuildFile; fileRef = 187DBD0B1557859400A8F589 /* ava1.png */; };
@@ -81,9 +79,6 @@
 		0049651A15987A0500AF8A2B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0049651C15987A3F00AF8A2B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0049651E15987A7700AF8A2B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		0049652015987ABF00AF8A2B /* NYXProgressiveImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYXProgressiveImageView.h; sourceTree = "<group>"; };
-		0049652115987ABF00AF8A2B /* NYXProgressiveImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYXProgressiveImageView.m; sourceTree = "<group>"; };
-		0049652315987ACD00AF8A2B /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		187BFF3D156C89C600B20CF0 /* abc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abc.png; sourceTree = "<group>"; };
 		187DBD06155783BA00A8F589 /* ava3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ava3.jpg; sourceTree = "<group>"; };
 		187DBD0B1557859400A8F589 /* ava1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ava1.png; sourceTree = "<group>"; };
@@ -124,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0049652415987ACD00AF8A2B /* libcommonCrypto.dylib in Frameworks */,
 				0049651F15987A7700AF8A2B /* ImageIO.framework in Frameworks */,
 				0049651D15987A3F00AF8A2B /* MobileCoreServices.framework in Frameworks */,
 				0049651B15987A0500AF8A2B /* Security.framework in Frameworks */,
@@ -144,8 +138,6 @@
 		004964F8159879D700AF8A2B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				0049652015987ABF00AF8A2B /* NYXProgressiveImageView.h */,
-				0049652115987ABF00AF8A2B /* NYXProgressiveImageView.m */,
 				004964FA159879E700AF8A2B /* NYXImagesHelper.h */,
 				004964FB159879E700AF8A2B /* NYXImagesHelper.m */,
 				004964FC159879E700AF8A2B /* NYXImagesKit.h */,
@@ -190,7 +182,6 @@
 		C447FE2315166F61003272A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0049652315987ACD00AF8A2B /* libcommonCrypto.dylib */,
 				0049651E15987A7700AF8A2B /* ImageIO.framework */,
 				0049651C15987A3F00AF8A2B /* MobileCoreServices.framework */,
 				0049651A15987A0500AF8A2B /* Security.framework */,
@@ -351,7 +342,6 @@
 				00496513159879E700AF8A2B /* UIImage+Resizing.m in Sources */,
 				00496514159879E700AF8A2B /* UIImage+Rotating.m in Sources */,
 				00496515159879E700AF8A2B /* UIImage+Saving.m in Sources */,
-				0049652215987ABF00AF8A2B /* NYXProgressiveImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

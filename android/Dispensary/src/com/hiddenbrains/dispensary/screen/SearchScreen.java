@@ -26,11 +26,9 @@ public class SearchScreen extends Activity implements OnClickListener{
 			if(DispensaryConstant.global_flag==0){
 				Intent int1=new Intent(this,DispensaryListScreen.class);
 			    startActivity(int1);
-			    finish();
 			}else if(DispensaryConstant.global_flag==3){
 				Intent int1=new Intent(this,Doctors_Clinic_List.class);
 			    startActivity(int1);
-			    finish();
 			}else{
 				et_zip=(EditText) findViewById(R.id.enter_state);
 			
@@ -54,14 +52,12 @@ public class SearchScreen extends Activity implements OnClickListener{
 			Intent intent=new Intent(this,Doctors_Clinic_List.class);
 				//intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
-				finish();
 				DispensaryConstant.global_flag=0;
 				break;
 		case R.id.d_btn_doctors:
 				Intent intent1=new Intent(this,Doctors_Clinic_List.class);
 			//	intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent1);
-				finish();
 				DispensaryConstant.global_flag=3;
 				break;
 		case R.id.s_btn_search:
@@ -86,7 +82,6 @@ public class SearchScreen extends Activity implements OnClickListener{
 						Intent intent2=new Intent(this,From_Main_Search.class);
 						intent2.putExtras(bundle);
 						startActivity(intent2);
-//						finish();
 				}
 			    }
 				catch(IllegalArgumentException e){

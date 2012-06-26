@@ -242,8 +242,8 @@ int max(int w, int h) {
     
     UIImage *face1 = [self CropImage:arc withImageView:self.activeImageView];
     UIImage *face2 = [self CropImage:arc1 withImageView:self.activeImageView];
-    [face1 drawInRect:CGRectMake(tempRect1.origin.x, tempRect1.origin.y, tempRect1.size.width, tempRect1.size.height)];
-    [face2 drawInRect:CGRectMake(tempRect.origin.x, tempRect.origin.y, tempRect.size.width, tempRect.size.height)];
+    [face1 drawInRect:CGRectMake(tempRect1.origin.x, tempRect1.origin.y - 140, face1.size.width, face1.size.height)];
+    [face2 drawInRect:CGRectMake(tempRect.origin.x, tempRect.origin.y - 140, face2.size.width, face2.size.height)];
 
 
     

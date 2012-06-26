@@ -15,6 +15,7 @@ public class DispansaryApplication extends Application {
 	
 	private static DispansaryApplication _instance = null;
 	private final HashMap<Object,Object> _data = new HashMap<Object,Object>();
+	public static int map_flag = 0;
 	
 	/**
 	 * 

@@ -426,11 +426,11 @@ IplImage* resizeImage(const IplImage *origImg, int newWidth,
         
         _bg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
         _bg.image = img;
-//        [self.view addSubview:_bg];
+       [self.view addSubview:_bg];
         
         _touchImg = [[TouchImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
         _touchImg.userInteractionEnabled = YES;
-//        [self.view addSubview:_touchImg];
+        [self.view addSubview:_touchImg];
         
         UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         button.frame = CGRectMake(100, 100, 50, 40);

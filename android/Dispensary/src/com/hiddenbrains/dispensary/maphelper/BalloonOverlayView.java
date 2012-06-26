@@ -47,7 +47,7 @@ public class BalloonOverlayView extends FrameLayout {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		View v;
-		if (DispensaryConstant.map_flag == 1) {
+		if (DispansaryApplication.map_flag == 1) {
 			v = inflater.inflate(R.layout.balloon_map_one_item_overlay, layout);
 			title = (TextView) v.findViewById(R.id.balloon_item_title);
 			snippet = (TextView) v.findViewById(R.id.balloon_item_snippet);
@@ -185,7 +185,7 @@ public class BalloonOverlayView extends FrameLayout {
 		currentIndex = index;
 		layout.setVisibility(VISIBLE);
 
-		if (DispensaryConstant.map_flag == 1) {
+		if (DispansaryApplication.map_flag == 1) {
 
 			if (item.getTitle() != null) {
 				title.setVisibility(VISIBLE);

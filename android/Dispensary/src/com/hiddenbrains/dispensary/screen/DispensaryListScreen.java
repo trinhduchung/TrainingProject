@@ -68,11 +68,9 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
         if(DispensaryConstant.global_flag==2){
         	Intent intent1=new Intent(this,SearchScreen.class);
 			startActivity(intent1);
-        	finish();
         }else if(DispensaryConstant.global_flag==3){
         	Intent intent2=new Intent(this,Doctors_Clinic_List.class);
 			startActivity(intent2);	
-			finish();
         }else{
         	 btn_dispansary_list=(ImageButton) findViewById(R.id.d_btn_dispansary);
              btn_search=(ImageButton) findViewById(R.id.d_btn_search);
@@ -109,13 +107,11 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 					DispensaryConstant.global_flag=2;
 					Intent intent1=new Intent(this,SearchScreen.class);
 					startActivity(intent1);
-					finish();
 							break;
 				case R.id.d_btn_doctors:
 					DispensaryConstant.global_flag=3;
 					Intent intent2=new Intent(this,Doctors_Clinic_List.class);
 					startActivity(intent2);
-					finish();
 							break;
 				case R.id.refresh:
 					   pd = ProgressDialog.show(this, "Please wait", "Refreshing Data...", true,false);
@@ -129,6 +125,7 @@ public class DispensaryListScreen extends Activity implements OnClickListener,Ru
 					bundle.putInt("index",1);
 
 					Intent intent=new Intent(this,MapScreenAll.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 					intent.putExtras(bundle);
 					startActivity(intent);
 					 break;

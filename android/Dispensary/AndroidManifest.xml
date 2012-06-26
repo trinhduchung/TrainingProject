@@ -25,10 +25,10 @@
 		</activity>
 		<activity android:name=".Dispansary_Detail" android:label="DispensaryListScreen" 
 			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
-		<activity android:name=".MapScreen" android:label="CARRIER"
+		<activity android:name=".MapScreen" android:label="CARRIER" android:noHistory="true"
 			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
 			
-		<activity android:name=".MapScreenAll" android:label="CARRIER"
+		<activity android:name=".MapScreenAll" android:label="CARRIER" android:noHistory="true"
 			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" />
 
 		<activity android:name=".ReviewScreen"

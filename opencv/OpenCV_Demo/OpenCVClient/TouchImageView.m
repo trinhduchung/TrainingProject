@@ -152,7 +152,7 @@
     CGContextAddPath(context, path);
     
     // Do the hit detection.
-    isHit = CGContextPathContainsPoint(context, point, kCGPathStroke);
+    isHit = CGContextPathContainsPoint(context, point, kCGPathFillStroke);
     
     CGContextRestoreGState(context);
     

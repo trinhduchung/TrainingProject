@@ -1,5 +1,6 @@
 package com.hiddenbrains.dispensary.screen;
 
+import java.io.IOException;
 import java.util.List;
 
 import android.graphics.drawable.Drawable;
@@ -11,98 +12,105 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
-import com.hiddenbrains.dispensary.common.DispensaryConstant;
 import com.hiddenbrains.dispensary.maphelper.MyItemizedOverlay;
 import com.hiddenbrains.dispensary.resource.ResourceLatLong;
 
 public class MapScreenAll extends MapActivity {
-	
-    MapView mapview;
-    Drawable image;
-    List<Overlay> mapOverlay;
-    MyItemizedOverlay overlayLayout;
-    public static final String LIST_OVERLAY_ITEM = "list_overlay_item";
-    
-    @Override
-	public void onCreate(Bundle savedInstanceState) 
-    {
-        super.onCreate(savedInstanceState);
-        try
-		{
-	        setContentView(R.layout.map_screen);
-	        DispensaryConstant.map_flag = 0;
-	        Bundle bundle = this.getIntent().getExtras();
-	        int index = bundle.getInt("index");
-	        ResourceLatLong resource = new ResourceLatLong(index);
-	        
-	        mapview = (MapView)findViewById(R.id.mapview);
-	        mapview.setBuiltInZoomControls(true);
-//	        image = getResources().getDrawable(R.drawable.green_leaf);
-	        mapOverlay = mapview.getOverlays();
-	        
-	        String [][]temp = resource.getLat_Lng();
-	        String []title =  resource.getTitle();
-	        String []address = resource.getAddress();
-	        int len = title.length;
-	        GeoPoint []points = new GeoPoint[len];
-	        OverlayItem []overlayItem = new OverlayItem[len];
-	        for(int i=0; i<len;i++)
-	        {
-	        	points[i] = new GeoPoint((int)((Double.parseDouble(temp[i][0]))*1E6),(int)((Double.parseDouble(temp[i][1]))*1E6));
-	        	overlayItem[i] = new OverlayItem(points[i],title[i],address[i]);
 
-	        	if(DispensaryListScreen.icon_image.get(i).toString().equals("green-leaf.png"))
-				{
-	        		image = getResources().getDrawable(R.drawable.green_leaf);
-				}
-				else if(DispensaryListScreen.icon_image.get(i).toString().equals("blue-leaf.png"))
-				{
-					image = getResources().getDrawable(R.drawable.blue_leaf);	
-				}
-				else if(DispensaryListScreen.icon_image.get(i).toString().equals("orange_leaf.png") || DispensaryListScreen.icon_image.get(i).toString().equals("orange-leaf.png"))
-				{
-					image = getResources().getDrawable(R.drawable.orange_leaf);	
-				}
-				else if(DispensaryListScreen.icon_image.get(i).toString().equals("delivery.png"))
-				{
-					image = getResources().getDrawable(R.drawable.delivery);	
-				}
-				else if(DispensaryListScreen.icon_image.get(i).toString().equals("delivery_blue.png"))
-				{
-					image = getResources().getDrawable(R.drawable.delivery_blue);	
-				}
-				else if(DispensaryListScreen.icon_image.get(i).toString().equals("delivery_orange.png"))
-				{
-					image = getResources().getDrawable(R.drawable.delivery_orange);	
-				}else if(DispensaryListScreen.icon_image.get(i).toString().equals("app_diamond.png"))
-				{
-					image = getResources().getDrawable(R.drawable.app_diamond);	
-				}
-				else
-				{
-					image = getResources().getDrawable(R.drawable.green_leaf);	
+	MapView mapview;
+	Drawable image;
+	List<Overlay> mapOverlay;
+	MyItemizedOverlay overlayLayout;
+	public static final String LIST_OVERLAY_ITEM = "list_overlay_item";
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.map_screen_all);
+	}
+
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		try {
+
+			DispansaryApplication.map_flag = 0;
+			Bundle bundle = this.getIntent().getExtras();
+			int index = bundle.getInt("index");
+			ResourceLatLong resource = new ResourceLatLong(index);
+
+			mapview = (MapView) findViewById(R.id.mapview);
+			mapview.setSatellite(false);
+			
+			mapview.setBuiltInZoomControls(true);
+			// image = getResources().getDrawable(R.drawable.green_leaf);
+			mapOverlay = mapview.getOverlays();
+
+			String[][] temp = resource.getLat_Lng();
+			String[] title = resource.getTitle();
+			String[] address = resource.getAddress();
+			int len = title.length;
+			GeoPoint[] points = new GeoPoint[len];
+			OverlayItem[] overlayItem = new OverlayItem[len];
+			for (int i = 0; i < len; i++) {
+				points[i] = new GeoPoint(
+						(int) ((Double.parseDouble(temp[i][0])) * 1E6),
+						(int) ((Double.parseDouble(temp[i][1])) * 1E6));
+				overlayItem[i] = new OverlayItem(points[i], title[i],
+						address[i]);
+				if (DispensaryListScreen.icon_image.get(i).toString()
+						.equals("green-leaf.png")) {
+					image = getResources().getDrawable(R.drawable.green_leaf);
+				} else if (DispensaryListScreen.icon_image.get(i).toString()
+						.equals("blue-leaf.png")) {
+					image = getResources().getDrawable(R.drawable.blue_leaf);
+				} else if (DispensaryListScreen.icon_image.get(i).toString()
+						.equals("orange_leaf.png")
+						|| DispensaryListScreen.icon_image.get(i).toString()
+								.equals("orange-leaf.png")) {
+					image = getResources().getDrawable(R.drawable.orange_leaf);
+				} else if (DispensaryListScreen.icon_image.get(i).toString()
+						.equals("delivery.png")) {
+					image = getResources().getDrawable(R.drawable.delivery);
+				} else if (DispensaryListScreen.icon_image.get(i).toString()
+						.equals("delivery_blue.png")) {
+					image = getResources()
+							.getDrawable(R.drawable.delivery_blue);
+				} else if (DispensaryListScreen.icon_image.get(i).toString()
+						.equals("delivery_orange.png")) {
+					image = getResources().getDrawable(
+							R.drawable.delivery_orange);
+				} else if (DispensaryListScreen.icon_image.get(i).toString()
+						.equals("app_diamond.png")) {
+					image = getResources().getDrawable(R.drawable.app_diamond);
+				} else {
+					image = getResources().getDrawable(R.drawable.green_leaf);
 				}
 
-	        	overlayLayout = new MyItemizedOverlay(image, mapview);
-	        	overlayLayout.setContext(this);
-		        overlayLayout.addOverlay(overlayItem[i]);
-		        mapOverlay.add(overlayLayout);
-	        }
-	        
-	        DispansaryApplication app = DispansaryApplication.sharedInstance();
-	        app.putData(LIST_OVERLAY_ITEM, overlayItem);
-	        
-	        final MapController mc = mapview.getController();
-	        mc.animateTo(points[0]);
-	        mc.setZoom(8);
-	        mapview.setStreetView(true);
-	        mapview.setSatellite(false);
-		}
-		catch(Exception e)
-		{
+				overlayLayout = new MyItemizedOverlay(image, mapview);
+				overlayLayout.setContext(this);
+				overlayLayout.addOverlay(overlayItem[i]);
+				mapOverlay.add(overlayLayout);
+			}
+
+			DispansaryApplication app = DispansaryApplication.sharedInstance();
+			app.putData(LIST_OVERLAY_ITEM, overlayItem);
+
+			final MapController mc = mapview.getController();
+			mc.animateTo(points[0]);
+			mc.setZoom(8);
+			mapview.setStreetView(true);
+			runOnUiThread(new Runnable() {
+				public void run() {
+					mapview.invalidate();
+					mapview.postInvalidate();
+				}
+			});
+		} catch (Exception e) {
 			e.getMessage();
 		}
-    }
+	}
 
 	@Override
 	protected boolean isRouteDisplayed() {
