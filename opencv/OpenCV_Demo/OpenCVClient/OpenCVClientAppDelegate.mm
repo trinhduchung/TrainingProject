@@ -19,6 +19,7 @@
 #import "MainViewController.h"
 #import "Features2DAndHomographyViewController.h"
 #import "FindObjectViewController.h"
+#import "OrbViewController.h"
 
 @implementation OpenCVClientAppDelegate
 
@@ -31,7 +32,9 @@
     FindObjectViewController * vc = [[[FindObjectViewController alloc] initWithNibName:@"FindObjectViewController" bundle:nil] autorelease];
     CaptureImageViewController * viewController  = [[[CaptureImageViewController alloc] init] autorelease];
     
-    UINavigationController *rootController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
+    OrbViewController *orbVC = [[[OrbViewController alloc] init] autorelease];
+    
+    UINavigationController *rootController = [[[UINavigationController alloc] initWithRootViewController:orbVC] autorelease];
     self.window.rootViewController = rootController;
     [self.window makeKeyAndVisible];
     return YES;

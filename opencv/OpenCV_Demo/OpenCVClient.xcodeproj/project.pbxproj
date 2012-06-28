@@ -30,6 +30,8 @@
 		005C85B71416B09D00B1ADDB /* OpenCV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005C85B61416B09D00B1ADDB /* OpenCV.framework */; };
 		00B7C9C5156B63DF00A02B1D /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B7C9C4156B63DF00A02B1D /* UIImage+Addition.m */; };
 		00D4E86F1565050100F784E7 /* TouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D4E86E1565050100F784E7 /* TouchImageView.m */; };
+		00E7E812159C49AB001E4692 /* OrbViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00E7E810159C49AB001E4692 /* OrbViewController.mm */; };
+		00E7E813159C49AB001E4692 /* OrbViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E7E811159C49AB001E4692 /* OrbViewController.xib */; };
 		00FFCAD01564FFE800114E3A /* CaptureImageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00FFCACF1564FFE800114E3A /* CaptureImageViewController.mm */; };
 		7796345E1590D04E00F527A6 /* Feature2D.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7796345B1590D04E00F527A6 /* Feature2D.xib */; };
 		7796345F1590D04E00F527A6 /* Features2DAndHomographyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7796345D1590D04E00F527A6 /* Features2DAndHomographyViewController.mm */; };
@@ -114,6 +116,9 @@
 		00B7C9C4156B63DF00A02B1D /* UIImage+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addition.m"; sourceTree = "<group>"; };
 		00D4E86D1565050100F784E7 /* TouchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchImageView.h; sourceTree = "<group>"; };
 		00D4E86E1565050100F784E7 /* TouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchImageView.m; sourceTree = "<group>"; };
+		00E7E80F159C49AB001E4692 /* OrbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrbViewController.h; sourceTree = "<group>"; };
+		00E7E810159C49AB001E4692 /* OrbViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OrbViewController.mm; sourceTree = "<group>"; };
+		00E7E811159C49AB001E4692 /* OrbViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrbViewController.xib; sourceTree = "<group>"; };
 		00FDD98E1435E549008F8ECE /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		00FFCACE1564FFE800114E3A /* CaptureImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureImageViewController.h; sourceTree = "<group>"; };
 		00FFCACF1564FFE800114E3A /* CaptureImageViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CaptureImageViewController.mm; sourceTree = "<group>"; };
@@ -256,6 +261,9 @@
 				00188C34158F29F2009531BD /* MainViewController.mm */,
 				77C10FC615922D4B00FAC624 /* Utils.h */,
 				77C10FC715922D4B00FAC624 /* Utils.m */,
+				00E7E80F159C49AB001E4692 /* OrbViewController.h */,
+				00E7E810159C49AB001E4692 /* OrbViewController.mm */,
+				00E7E811159C49AB001E4692 /* OrbViewController.xib */,
 			);
 			path = OpenCVClient;
 			sourceTree = "<group>";
@@ -426,6 +434,7 @@
 				77C10FD115922EE800FAC624 /* ArrowLeft@2x.png in Resources */,
 				77C10FD215922EE800FAC624 /* ArrowRight@2x.png in Resources */,
 				77C10FD315922EE800FAC624 /* image_border.png in Resources */,
+				00E7E813159C49AB001E4692 /* OrbViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +457,7 @@
 				77C10F9E1592244A00FAC624 /* FindObjectViewController.mm in Sources */,
 				77C10FC815922D4B00FAC624 /* Utils.m in Sources */,
 				77C10FCD15922E8700FAC624 /* ImageGaleryView.m in Sources */,
+				00E7E812159C49AB001E4692 /* OrbViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
